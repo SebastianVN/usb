@@ -77,6 +77,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         System.out.println("Hola mundo");
+        System.out.println("SOLO INFINITY WAR LOKS");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
