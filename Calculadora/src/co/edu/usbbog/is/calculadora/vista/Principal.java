@@ -76,6 +76,7 @@ public class Principal extends javax.swing.JFrame {
                 new Principal().setVisible(true);
             }
         });
+        System.out.println("Hola mundo");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
