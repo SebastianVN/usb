@@ -5,7 +5,8 @@
  */
 package co.edu.usbbog.is.basico.vista;
 
-import co.edu.usbbog.is.cliente.modelo.Operacion;
+import co.edu.usbbog.is.basico.controlador.Operador;
+import co.edu.usbbog.is.calculadora.Operacion;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -39,6 +40,8 @@ public class BasicasServer {
 
                 Operacion operacion = (Operacion) ois.readObject();
                 System.out.println(operacion.getOpe());
+                Operador op = new Operador();
+                System.out.println(op.operar(operacion));
                 if (operacion == null) {
                     System.out.println("Objeto NULL");
                     break;
