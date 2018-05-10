@@ -32,20 +32,18 @@ public class BasicasServer {
             FileWriter fw = null;
             ObjectOutputStream oos = null;
             ObjectInputStream ois = null;
-while (true) {  
-            clienteSocket = serverSocket.accept();
-            System.out.println("Conexion aceptada");
-            ois = new ObjectInputStream(clienteSocket.getInputStream());
-          
-                Operacion operacion =(Operacion) ois.readObject();
+            while (true) {
+                clienteSocket = serverSocket.accept();
+                System.out.println("Conexion aceptada");
+                ois = new ObjectInputStream(clienteSocket.getInputStream());
+
+                Operacion operacion = (Operacion) ois.readObject();
                 System.out.println(operacion.getOpe());
                 if (operacion == null) {
                     System.out.println("Objeto NULL");
                     break;
                 }
-
             }
-
         } catch (IOException e) {
             System.out.println("No se pudo conectar..");
             System.exit(0);
