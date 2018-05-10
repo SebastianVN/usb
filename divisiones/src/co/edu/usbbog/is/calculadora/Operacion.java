@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.usbbog.is.divisiones.modelo;
+package co.edu.usbbog.is.calculadora;
 
 import java.io.Serializable;
 
