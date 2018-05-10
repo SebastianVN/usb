@@ -5,7 +5,7 @@
  */
 package co.edu.usbbog.is.basico.controlador;
 
-import co.edu.usbbog.is.basico.modelo.Operacion;
+import co.edu.usbbog.is.cliente.modelo.Operacion;
 
 /**
  *
