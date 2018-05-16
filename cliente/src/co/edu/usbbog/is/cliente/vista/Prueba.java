@@ -18,7 +18,7 @@ public class Prueba {
     public final static int PUERTO_POTENCIA = 9992;
     public final static String HOST_POTENCIA = "127.0.0.1";
     public static void main(String[] args) {
-        Operacion operacion = new Operacion(8.2, 3.0, '+');
+        Operacion operacion = new Operacion(2.0, 3.0, 'e');
         Socket clienteSocket = null;
         ObjectOutputStream oos = null;
         try {

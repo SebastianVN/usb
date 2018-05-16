@@ -18,9 +18,17 @@ public class Operacion implements Serializable {
      */
     private double num1;
     /**
-     * este numero representa el segundo numero a operar
+     * este numero representa el primer numero a operar
      */
     private double num2;
+    /**
+     * este numero representa el primer numero a operar
+     */
+    private double base;
+    /**
+     * este numero representa el segundo numero a operar
+     */
+    private double exp;
     /**
      * este numero representa el resultado de la operacion
      */
@@ -34,67 +42,124 @@ public class Operacion implements Serializable {
      * constructora por defecto que limpia los atributos
      */
     public Operacion() {
-        this.num1 = 0.0;
-        this.num2 = 0.0;
+        this.base = 0.0;
+        this.exp = 0.0;
         this.res = 0.0;
-        this.ope = 'w';
+        this.ope = 'e';
     }
     /**
-     * constructora que da los valores num1 y num2 y la operacion ope a realizar.
-     * @param num1 representa el primer numero
-     * @param num2 representa el segundo numero
+     * constructora que da los valores base y exp y la operacion ope a realizar.
+     * @param base representa el primer numero
+     * @param exp representa el segundo numero
      * @param ope representa la operacion
      */
-    public Operacion(double num1, double num2, char ope) {
-        this.num1 = num1;
-        this.num2 = num2;
+    public Operacion(double base, double exp, char ope) {
+        this.base = base;
+        this.exp = exp;
+        this.num1 = 0.0;
+        this.num2 = 0.0;
         this.res = 0.0;
         this.ope = ope;
     }
     
     /**
-     * metodo para optener el primer numero
+     * metodo para obtener el primer numero
      * @return el valor del primer numero
      */
     public double getNum1() {
-        return num1;
+        return base;
     }
     
     /**
-     * cambiar el valor del primer numero
-     * @param num1 el nuevo valor del primer numero
+     * metodo para cambiar el valor del primer numero
+     * @param base el nuevo valor del primer numero
      */
-    public void setNum1(double num1) {
-        this.num1 = num1;
+    public void setNum1(double base) {
+        this.base = base;
     }
-
+    /**
+     * metodo para obtener el primer numero
+     * @return el valor del primer numero
+     */
     public double getNum2() {
-        return num2;
+        return base;
+    }
+    
+    /**
+     * metodo para cambiar el valor del primer numero
+     * @param base el nuevo valor del primer numero
+     */
+    public void setNum2(double base) {
+        this.base = base;
+    }
+    /**
+     * metodo para obtener el primer numero
+     * @return el valor del primer numero
+     */
+    public double getBase() {
+        return base;
+    }
+    
+    /**
+     * metodo para cambiar el valor del primer numero
+     * @param base el nuevo valor del primer numero
+     */
+    public void setBase(double base) {
+        this.base = base;
     }
 
-    public void setNum2(double num2) {
-        this.num2 = num2;
+    /**
+     * metodo para obtener el segundo numero
+     * @return el valor del primer numero
+     */
+    public double getExp() {
+        return exp;
+    }
+    
+    /**
+     * metodo para cambiar el valor del segundo numero
+     * @param base el nuevo valor del primer numero
+     */
+    public void setExp(double exp) {
+        this.exp = exp;
     }
 
+    /**
+     * metodo para obtener el resultado de la operacion
+     * @return el valor del primer numero
+     */
     public double getRes() {
         return res;
     }
 
+    /**
+     * metodo para cambiar el valor del resultado de la operacion
+     * @param base el nuevo valor del primer numero
+     */
     public void setRes(double res) {
         this.res = res;
     }
 
+    /**
+     * metodo para obtener la operacion a realizar
+     * @return el valor del primer numero
+     */
     public char getOpe() {
         return ope;
     }
 
+    /**
+     * metodo para cambiar la operacion a realizar
+     * @param base el nuevo valor del primer numero
+     */
     public void setOpe(char ope) {
         this.ope = ope;
     }
 
     @Override
     public String toString() {
-        return "Operacion{" + "num1=" + num1 + ", num2=" + num2 + ", res=" + res + ", ope=" + ope + '}';
-    }     
+        return "Operacion{" + "base=" + base + ", exp=" + exp + ", res=" + res + ", ope=" + ope + '}';
+    }  
+    
 
 }
