@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.usbbog.edu.is.potencia.vista;
+package co.edu.usbbog.is.potencia.vista;
 
 /**
  *
