@@ -34,12 +34,12 @@ public class Operador {
                     o.setRes(divisionEntera(o.getNum1(), o.getNum2()));
 
                     o.setInfo("Operación exitosa");
-
+                    
                     break;
                 case '%':
                     o.setRes(modulo(o.getNum1(), o.getNum2()));
                     o.setInfo("Operación exitosa");
-
+                    
                     break;
                 default:
                     System.out.println("operacion no valida");
