@@ -5,10 +5,7 @@
  */
 package co.edu.usbbog.is.cliente.vista;
 
-import java.awt.Image;
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 
 /**
  *
