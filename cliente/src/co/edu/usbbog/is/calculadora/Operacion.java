@@ -8,158 +8,162 @@ package co.edu.usbbog.is.calculadora;
 import java.io.Serializable;
 
 /**
+ * Clase constructora para todas las variables a utilizar en la aplicación
  *
- * @author 204
+ * @author Sebastián
  */
 public class Operacion implements Serializable {
+
     //Atributos
     /**
      * este numero representa el primer numero a operar
      */
     private double num1;
     /**
-     * este numero representa el primer numero a operar
-     */
-    private double num2;
-    /**
-     * este numero representa el primer numero a operar
-     */
-    private double base;
-    /**
      * este numero representa el segundo numero a operar
      */
-    private double exp;
+    private double num2;
     /**
      * este numero representa el resultado de la operacion
      */
     private double res;
     /**
-     * representa la operacion a ejecutarse 
-    */
+     * representa la operacion a ejecutarse
+     */
     private char ope;
+    /**
+     * Guarda un mensaje para dar informacion de la operación
+     */
+    private String info;
+
     //constructoras
     /**
      * constructora por defecto que limpia los atributos
      */
     public Operacion() {
-        this.base = 0.0;
-        this.exp = 0.0;
-        this.res = 0.0;
-        this.ope = 'e';
-    }
-    /**
-     * constructora que da los valores base y exp y la operacion ope a realizar.
-     * @param base representa el primer numero
-     * @param exp representa el segundo numero
-     * @param ope representa la operacion
-     */
-    public Operacion(double base, double exp, char ope) {
-        this.base = base;
-        this.exp = exp;
         this.num1 = 0.0;
         this.num2 = 0.0;
         this.res = 0.0;
-        this.ope = ope;
+        this.ope = 'w';
+        this.info = "";
     }
-    
+
     /**
-     * metodo para obtener el primer numero
+     * constructora que da los valores num1 y num2 y la operacion ope a
+     * realizar.
+     *
+     * @param num1 representa el primer numero
+     * @param num2 representa el segundo numero
+     * @param ope representa la operacion
+     * @param info informacion de la operación
+     */
+    public Operacion(double num1, double num2, char ope, String info) {
+        this.num1 = num1;
+        this.num2 = num2;
+        this.res = 0.0;
+        this.ope = ope;
+        this.info = info;
+    }
+
+    //Metodos Getters and Setters
+    /**
+     * Metodo para obtener el primer numero
+     *
      * @return el valor del primer numero
      */
     public double getNum1() {
-        return base;
+        return num1;
     }
-    
+
     /**
-     * metodo para cambiar el valor del primer numero
-     * @param base el nuevo valor del primer numero
+     * Cambiar el valor del primer numero
+     *
+     * @param num1 el nuevo valor del primer numero
      */
-    public void setNum1(double base) {
-        this.base = base;
+    public void setNum1(double num1) {
+        this.num1 = num1;
     }
+
     /**
-     * metodo para obtener el primer numero
-     * @return el valor del primer numero
+     * Metodo para obtener el segundo numero
+     *
+     * @return el valor del segundo numero
      */
     public double getNum2() {
-        return base;
-    }
-    
-    /**
-     * metodo para cambiar el valor del primer numero
-     * @param base el nuevo valor del primer numero
-     */
-    public void setNum2(double base) {
-        this.base = base;
-    }
-    /**
-     * metodo para obtener el primer numero
-     * @return el valor del primer numero
-     */
-    public double getBase() {
-        return base;
-    }
-    
-    /**
-     * metodo para cambiar el valor del primer numero
-     * @param base el nuevo valor del primer numero
-     */
-    public void setBase(double base) {
-        this.base = base;
+        return num2;
     }
 
     /**
-     * metodo para obtener el segundo numero
-     * @return el valor del primer numero
+     * Cambiar el valor del segundo numero
+     *
+     * @param num2 el nuevo valor del segundo numero
      */
-    public double getExp() {
-        return exp;
-    }
-    
-    /**
-     * metodo para cambiar el valor del segundo numero
-     * @param base el nuevo valor del primer numero
-     */
-    public void setExp(double exp) {
-        this.exp = exp;
+    public void setNum2(double num2) {
+        this.num2 = num2;
     }
 
     /**
-     * metodo para obtener el resultado de la operacion
-     * @return el valor del primer numero
+     * Metodo para obtener el valor del resultado entre dos numero
+     *
+     * @return el valor del resultado de uuna operacion
      */
     public double getRes() {
         return res;
     }
 
     /**
-     * metodo para cambiar el valor del resultado de la operacion
-     * @param base el nuevo valor del primer numero
+     * Cambia el valor del resultado
+     *
+     * @param res el nuevo valor del resultado
      */
     public void setRes(double res) {
         this.res = res;
     }
 
     /**
-     * metodo para obtener la operacion a realizar
-     * @return el valor del primer numero
+     * Metodo para obtener el simbolo de la operacion
+     *
+     * @return el simbolo de la operacion
      */
     public char getOpe() {
         return ope;
     }
 
     /**
-     * metodo para cambiar la operacion a realizar
-     * @param base el nuevo valor del primer numero
+     * Cambia el simbolo de la operacion
+     *
+     * @param ope el nuevo simbolo de la operacion
      */
     public void setOpe(char ope) {
         this.ope = ope;
     }
 
+    /**
+     * Metodo para obtener la información de la operación
+     *
+     * @return la información de la operación
+     */
+    public String getInfo() {
+        return info;
+    }
+
+    /**
+     * Cambia la información de la opoeración
+     *
+     * @param info
+     */
+    public void setInfo(String info) {
+        this.info = info;
+    }
+
     @Override
+    /**
+     * Metodo para mostrar el objeto
+     *
+     * @return un objeto que contiene las variables de la operacion realizada
+     */
     public String toString() {
-        return "Operacion{" + "base=" + base + ", exp=" + exp + ", res=" + res + ", ope=" + ope + '}';
-    }  
-    
+        return "Operacion{" + "num1=" + num1 + ", num2=" + num2 + ", res=" + res + ", ope=" + ope + ", Informacion=" + info + '}';
+    }
 
 }
