@@ -50,7 +50,6 @@ public class DivisionServer {
                 clienteSocket = serverSocket.accept();
                 System.out.println("Conexion aceptada");
                 ois = new ObjectInputStream(clienteSocket.getInputStream());
-
                 Operacion operacion = (Operacion) ois.readObject();
                 System.out.println(operacion.getOpe());
                 Operador op = new Operador();
