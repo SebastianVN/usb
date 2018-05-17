@@ -5,10 +5,56 @@
  */
 package co.edu.usbbog.is.potencia.controlador;
 
+import co.edu.usbbog.is.calculadora.OperacionPotencia;
+
 /**
  *
  * @author jofa7
  */
 public class Operador {
-    
+    /**
+     * Metodo operacion el cual valida la operacion seleccionada y realiza el proceso
+     * @param o
+     * @return 
+     */
+    public OperacionPotencia operar(OperacionPotencia o){
+        if(o.getOpe()=='w'){
+            return null;
+        }else{
+            switch(o.getOpe()){
+                case 'e':
+                    o.setRes(potencia(o.getBase(),o.getExp()));
+                    break;
+                case 'r':
+                    o.setRes(raiz(o.getBase(),o.getExp()));
+                    break;
+                default:
+                    System.out.println("operacion no valida");
+                    return null;
+            }
+        }
+        return o;
+    }
+
+    /**
+     * Se genera el método potencia el cual se encarga de hacer el calculo de:
+     * base^exp que se puede ver como a^b
+     * @param base
+     * @param exp
+     * @return 
+     */
+    private double potencia(double base, double exp) {
+        return Math.pow(base, exp);
+    }
+
+    /**
+     * Se genera el método raiz el cual se encarga de hacer el calculo de:
+     * exp√base que se puede ver como b√a
+     * @param base
+     * @param exp
+     * @return 
+     */
+    private double raiz(double base, double exp) {
+        return Math.pow(base, 1/exp);
+    }
 }
