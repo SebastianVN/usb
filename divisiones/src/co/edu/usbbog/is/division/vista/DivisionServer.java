@@ -17,13 +17,26 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
+ * Clase servidor para las operacioinnes de division que se conecta por medio de
+ * sockets
  *
  * @author Sebastian
  */
 public class DivisionServer {
-    private final static int PORT = 9990;
 
+    /**
+     * Variable que me guarda el puerto que se va a utilizar como puente entre
+     * servidor y cliente
+     */
+    private final static int PORT = 9991;
+
+    /**
+     * Metodo principal que recibe un objeto por parte del cliente
+     *
+     * @param args
+     */
     public static void main(String[] args) {
+        //Utilizamos un try and catch para manejar excepciones al utilizar sockets
         try {
             ServerSocket serverSocket = new ServerSocket(PORT);
             System.out.println("DivisionServidor iniciando...");
@@ -32,6 +45,7 @@ public class DivisionServer {
             FileWriter fw = null;
             ObjectOutputStream oos = null;
             ObjectInputStream ois = null;
+            // Utilizamos un ciclo infinito para mantener el servidor activo
             while (true) {
                 clienteSocket = serverSocket.accept();
                 System.out.println("Conexion aceptada");
@@ -53,5 +67,5 @@ public class DivisionServer {
             Logger.getLogger(DivisionServer.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
 }
