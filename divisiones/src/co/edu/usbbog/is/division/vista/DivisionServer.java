@@ -55,6 +55,9 @@ public class DivisionServer {
                 System.out.println(operacion.getOpe());
                 Operador op = new Operador();
                 System.out.println(op.operar(operacion));
+                oos = new ObjectOutputStream(clienteSocket.getOutputStream());
+                oos.writeObject(op.operar(operacion));
+                oos.flush();
                 if (operacion == null) {
                     System.out.println("Objeto NULL");
                     break;
