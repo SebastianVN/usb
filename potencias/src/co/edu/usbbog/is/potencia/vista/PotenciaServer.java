@@ -21,6 +21,7 @@ import java.util.logging.Logger;
  * @author jofa7
  */
 public class PotenciaServer {
+
     private final static int PORT = 9992;
 
     public static void main(String[] args) {
@@ -36,11 +37,13 @@ public class PotenciaServer {
                 clienteSocket = serverSocket.accept();
                 System.out.println("Conexion aceptada");
                 ois = new ObjectInputStream(clienteSocket.getInputStream());
-
                 Operacion operacion = (Operacion) ois.readObject();
                 System.out.println(operacion.getOpe());
                 Operador op = new Operador();
                 System.out.println(op.operar(operacion));
+                oos = new ObjectOutputStream(clienteSocket.getOutputStream());
+                oos.writeObject(op.operar(operacion));
+                oos.flush();
                 if (operacion == null) {
                     System.out.println("Objeto NULL");
                     break;
