@@ -31,13 +31,13 @@ public class Operador {
                     o.setInfo("Operación exitosa");
                     break;
                 case 'd':
-                    o.setRes(divisionDecimal(o.getNum1(), o.getNum2()));
+                    o.setRes(divisionEntera(o.getNum1(), o.getNum2()));
 
                     o.setInfo("Operación exitosa");
 
                     break;
                 case '%':
-                    o.setRes(divisionModular(o.getNum1(), o.getNum2()));
+                    o.setRes(modulo(o.getNum1(), o.getNum2()));
                     o.setInfo("Operación exitosa");
 
                     break;
@@ -75,12 +75,12 @@ public class Operador {
      * @param num2 segundo numero es el divisor
      * @return el resultado es el cociente de la division decimal
      */
-    private double divisionDecimal(double num1, double num2) {
+    private double divisionEntera(double num1, double num2) {
         if (num2 == 0) {
             System.out.println("Error matematico");
-            return 0;
+            return 0.0;
         }
-        return num1 / num2;
+        return (double) ((int) ((int) (num1)) / ((int) (num2)));
     }
 
     /**
@@ -90,16 +90,14 @@ public class Operador {
      *
      * @param num1 el primero numero es el dividendo
      * @param num2 el segundo numero es el divisior
-     * @return el resultado es el residuo entre el primer y segundo
-     * numero
+     * @return el resultado es el residuo entre el primer y segundo numero
      */
-    private double divisionModular(double num1, double num2) {
+    private double modulo(double num1, double num2) {
         if (num2 == 0) {
             System.out.println("Error matematico");
             return 0;
         }
-        return num1 / num2;
-
+        return (double) ((int) ((int) (num1)) % ((int) (num2)));
     }
 
 }
