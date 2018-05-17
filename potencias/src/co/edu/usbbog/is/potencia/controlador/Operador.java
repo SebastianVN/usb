@@ -5,7 +5,7 @@
  */
 package co.edu.usbbog.is.potencia.controlador;
 
-import co.edu.usbbog.is.calculadora.OperacionPotencia;
+import co.edu.usbbog.is.calculadora.Operacion;
 
 /**
  *
@@ -17,16 +17,16 @@ public class Operador {
      * @param o
      * @return 
      */
-    public OperacionPotencia operar(OperacionPotencia o){
+    public Operacion operar(Operacion o){
         if(o.getOpe()=='w'){
             return null;
         }else{
             switch(o.getOpe()){
                 case 'e':
-                    o.setRes(potencia(o.getBase(),o.getExp()));
+                    o.setRes(potencia(o.getNum1(),o.getNum2()));
                     break;
                 case 'r':
-                    o.setRes(raiz(o.getBase(),o.getExp()));
+                    o.setRes(raiz(o.getNum1(),o.getNum2()));
                     break;
                 default:
                     System.out.println("operacion no valida");

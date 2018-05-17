@@ -5,7 +5,7 @@
  */
 package co.edu.usbbog.is.potencia.vista;
 
-import co.edu.usbbog.is.calculadora.OperacionPotencia;
+import co.edu.usbbog.is.calculadora.Operacion;
 import co.edu.usbbog.is.potencia.controlador.Operador;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -37,7 +37,7 @@ public class PotenciaServer {
                 System.out.println("Conexion aceptada");
                 ois = new ObjectInputStream(clienteSocket.getInputStream());
 
-                OperacionPotencia operacion = (OperacionPotencia) ois.readObject();
+                Operacion operacion = (Operacion) ois.readObject();
                 System.out.println(operacion.getOpe());
                 Operador op = new Operador();
                 System.out.println(op.operar(operacion));
