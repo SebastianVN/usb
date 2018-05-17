@@ -17,27 +17,39 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
+ * Clase servidor que se conecta por medio de sockets
  *
- * @author 204
+ * @author Sebastián
  */
 public class BasicasServer {
 
+    /**
+     * Variable que me guarda el puerto que se va a utilizar como puente entre
+     * servidor y cliente
+     */
     private final static int PORT = 9990;
 
+    /**
+     * Metodo Principal que recibe un objeto de cliente, que dicho objeto es una
+     * operacion
+     *
+     * @param args
+     */
     public static void main(String[] args) {
+        //Utilizamos un try and catch para manejar excepciones al utilizar sockets
         try {
             ServerSocket serverSocket = new ServerSocket(PORT);
-            System.out.println("BasicasServidor iniciando...");
+            System.out.println("BasicasServidor inic iando...");
             System.out.println("BasicasServidor esperando cliente...");
             Socket clienteSocket = null;
             FileWriter fw = null;
             ObjectOutputStream oos = null;
             ObjectInputStream ois = null;
+            // Utilizamos un ciclo infinito para mantener el servidor activo
             while (true) {
                 clienteSocket = serverSocket.accept();
                 System.out.println("Conexion aceptada");
                 ois = new ObjectInputStream(clienteSocket.getInputStream());
-
                 Operacion operacion = (Operacion) ois.readObject();
                 System.out.println(operacion.getOpe());
                 Operador op = new Operador();
