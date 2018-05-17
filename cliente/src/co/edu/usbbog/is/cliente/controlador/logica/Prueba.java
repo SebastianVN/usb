@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.usbbog.is.cliente.vista;
+package co.edu.usbbog.is.cliente.controlador.logica;
 
 import co.edu.usbbog.is.calculadora.Operacion;
 import java.io.IOException;
@@ -48,7 +48,7 @@ public class Prueba {
      * @param args
      */
     
-    public static void main(String[] args) {
+    public  void hola() {
         Operacion operacion = new Operacion(15.0, 3.0, '/', "");
         Socket clienteSocket = null;
         ObjectOutputStream oos = null;
