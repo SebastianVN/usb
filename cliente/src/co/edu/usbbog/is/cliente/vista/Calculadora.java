@@ -375,24 +375,29 @@ public class Calculadora extends javax.swing.JPanel {
             );
         }// </editor-fold>//GEN-END:initComponents
     /**
-     * Seccion donde se definen la funcionalidad de cada JButtom
-     */
-    
+     * Void jButton encargado el boton 9
+     */    
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
         System.out.println("9");
     }//GEN-LAST:event_jButton9ActionPerformed
-
+    /**
+     * Void jButton encargado el boton 8
+     */ 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
         System.out.println("8");
     }//GEN-LAST:event_jButton8ActionPerformed
-
+    /**
+     * Void jButton encargado el boton 7
+     */ 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
         System.out.println("7");
     }//GEN-LAST:event_jButton7ActionPerformed
-
+    /**
+     * Void jButton encargado el boton Punto (.)
+     */ 
     private void jButtonPuntoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPuntoActionPerformed
         // TODO add your handling code here:
         System.out.println("Punto (.)");
@@ -401,105 +406,145 @@ public class Calculadora extends javax.swing.JPanel {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
-
+    /**
+     * Void jButton encargado el boton 1
+     */ 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         System.out.println("1");
     }//GEN-LAST:event_jButton1ActionPerformed
-
+    /**
+     * Void jButton encargado el boton 2
+     */ 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         System.out.println("2");
     }//GEN-LAST:event_jButton2ActionPerformed
-
+    /**
+     * Void jButton encargado el boton 3
+     */ 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         System.out.println("3");
     }//GEN-LAST:event_jButton3ActionPerformed
-
+    /**
+     * Void jButton encargado el boton 4
+     */ 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         System.out.println("4");
     }//GEN-LAST:event_jButton4ActionPerformed
-
+    /**
+     * Void jButton encargado el boton 5
+     */ 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
         System.out.println("5");
     }//GEN-LAST:event_jButton5ActionPerformed
-
+    /**
+     * Void jButton encargado el boton 6
+     */ 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
         System.out.println("6");
     }//GEN-LAST:event_jButton6ActionPerformed
-
+    /**
+     * Void jButton encargado el boton salir
+     */ 
     private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed
         // TODO add your handling code here:
         System.out.println("Hasta Luego");
         JOptionPane.showMessageDialog(jButtonLogout, "Gracias, vuelva pronto xD");
         p.salir();
     }//GEN-LAST:event_jButtonSalirActionPerformed
-
+    /**
+     * Void jButton encargado el boton Cerrar sesión
+     */ 
     private void jButtonLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLogoutActionPerformed
         // TODO add your handling code here:
         System.out.println("Cerrando sesión");
         p.irAInicioDeSesion();
     }//GEN-LAST:event_jButtonLogoutActionPerformed
-
+    /**
+     * Void jButton encargado el boton Limpiar tablero
+     */ 
     private void jButtonLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLimpiarActionPerformed
         // TODO add your handling code here:
         System.out.println("Limpiando");
     }//GEN-LAST:event_jButtonLimpiarActionPerformed
-
+    /**
+     * Void jButton encargado el boton Borrar
+     */ 
     private void jButtonBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBorrarActionPerformed
         // TODO add your handling code here:
         System.out.println("Borrando");
     }//GEN-LAST:event_jButtonBorrarActionPerformed
-
+    /**
+     * Void jButton encargado el boton Potencia
+     */ 
     private void jButtonPotenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPotenciaActionPerformed
         // TODO add your handling code here:
         System.out.println("Potenciacion");
     }//GEN-LAST:event_jButtonPotenciaActionPerformed
-
+    /**
+     * Void jButton encargado el boton Division real
+     */ 
     private void jButtonRealActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRealActionPerformed
         // TODO add your handling code here:
         System.out.println("Division real");
     }//GEN-LAST:event_jButtonRealActionPerformed
-
+    /**
+     * Void jButton encargado el boton Multiplicacion
+     */ 
     private void jButtonMultiplicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMultiplicacionActionPerformed
         // TODO add your handling code here:
         System.out.println("Multiplicacion");
     }//GEN-LAST:event_jButtonMultiplicacionActionPerformed
-
+    /**
+     * Void jButton encargado el boton Suma
+     */ 
     private void jButtonSumaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSumaActionPerformed
         // TODO add your handling code here:
         System.out.println("Suma");
     }//GEN-LAST:event_jButtonSumaActionPerformed
-
+    /**
+     * Void jButton encargado el boton Resta
+     */ 
     private void jButtonRestaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRestaActionPerformed
         // TODO add your handling code here:
         System.out.println("Resta");
     }//GEN-LAST:event_jButtonRestaActionPerformed
-
+    /**
+     * Void jButton encargado el boton Division
+     */ 
     private void jButtonDivisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDivisionActionPerformed
         // TODO add your handling code here:
         System.out.println("Division");
     }//GEN-LAST:event_jButtonDivisionActionPerformed
-
+    /**
+     * Void jButton encargado el boton Division Modular
+     */ 
     private void jButtonModularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModularActionPerformed
         // TODO add your handling code here:
         System.out.println("Division modular");
     }//GEN-LAST:event_jButtonModularActionPerformed
-
+    /**
+     * Void jButton encargado el boton Raiz n
+     */ 
     private void jButtonRaizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRaizActionPerformed
         // TODO add your handling code here:
         System.out.println("Raiz n");
     }//GEN-LAST:event_jButtonRaizActionPerformed
-
+    /**
+     * Void jButton encargado el boton 0
+     */ 
     private void jButton0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton0ActionPerformed
         // TODO add your handling code here:
         System.out.println("0");
     }//GEN-LAST:event_jButton0ActionPerformed
-
+    /**
+     * Void jButton encargado el boton Igual (=)
+     */ 
     private void jButtonIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIgualActionPerformed
         // TODO add your handling code here:
         System.out.println("Igual (=)");
