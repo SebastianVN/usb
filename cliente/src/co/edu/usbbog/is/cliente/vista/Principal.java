@@ -9,7 +9,7 @@ import javax.swing.JFrame;
 
 /**
  *
- * @author sala3
+ * @author Sebastian
  */
 public class Principal extends JFrame {
     //relaciones
@@ -123,6 +123,13 @@ public class Principal extends JFrame {
     //metodos de logica
     protected  boolean validar(String usuario, String pass) {
         return true;
+    }
+    protected boolean validarRegistro(String nombre, String usuario, String pass, String confirPass){
+        return true;
+    }
+
+    protected void irAlogin() {
+        iniciarVentana();
     }
 
 }

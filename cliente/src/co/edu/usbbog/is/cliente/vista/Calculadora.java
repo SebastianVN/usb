@@ -7,7 +7,8 @@ package co.edu.usbbog.is.cliente.vista;
 
 /**
  *
- * @author 204
+ * @author Sebastian
+ * @author Jose
  */
 public class Calculadora extends javax.swing.JPanel {
 
