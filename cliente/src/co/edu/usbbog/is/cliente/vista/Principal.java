@@ -10,6 +10,7 @@ import javax.swing.JFrame;
 /**
  *
  * @author Sebastian
+ * @author Jose
  */
 public class Principal extends JFrame {
     //relaciones
@@ -53,10 +54,15 @@ public class Principal extends JFrame {
     //metodos de eventos del menu bar    
 
     //metodos de navegacion
+    /**
+     * Metodo para salir de la aplicación
+     */
     protected void salir() {
         System.exit(0);
     }
-    
+    /**
+     * Metodo para quitar el panel actual del marco
+     */
     private void quitarPanelesDelMarco() {
         setVisible(false);
         if (calculadora!=null) {
@@ -69,19 +75,25 @@ public class Principal extends JFrame {
         }
         //hacer lo anterior parra cada panel que este en el marco
     }
-
+    /**
+     * Metodo para iniciar el marco
+     */
     protected  void iniciarMarco(){
         //inicia los componentes del frame
         this.quitarPanelesDelMarco();
         this.iniciarComponentesDePrincipal();
         this.setVisible(true);
     }
-    
+    /**
+     * Metodo para cerrar la ventana
+     */
     protected void cerrarVentana() {
         ventana.setVisible(false);
         ventana = null;
     }
-        
+    /**
+     * Metodo para abrir la ventana
+     */
     private void iniciarVentana() {
         if (ventana!=null) {
             cerrarVentana();
@@ -89,6 +101,9 @@ public class Principal extends JFrame {
         setVisible(false);
     }
     //metodos de navegacion
+    /**
+     * Metodo para pasar al panel de la calculadora
+     */
     protected void irACalculadora() {
         cerrarVentana();
         iniciarMarco();
@@ -101,7 +116,9 @@ public class Principal extends JFrame {
         //centra la aplicacion 
         setLocationRelativeTo(null);
     }
-    
+    /**
+     * Metodo para ir al panel de registrar
+     */
     protected  void irARegistrar() {
         cerrarVentana();
         iniciarMarco();
@@ -114,22 +131,32 @@ public class Principal extends JFrame {
         //centra la aplicacion 
         setLocationRelativeTo(null);
     }
-        
+    /**
+     * Metodo para ir al inicio de sesion
+     */
     protected void irAInicioDeSesion() {
         iniciarVentana();
         login = new Login(this);
         ventana = new Ventana(this, login, "Ventana", false, false, DO_NOTHING_ON_CLOSE);
     }
     //metodos de logica
+    /**
+     * Metodo para validar el inicio de sesion de un usuario
+     * @param usuario valor del usuario
+     * @param pass valor contraseña
+     * @return un verdadero o falso segun la condicion
+     */
     protected  boolean validar(String usuario, String pass) {
         return true;
-    }
+    }/**
+     * Metodo para validad el resgistro y agregar el nuevo usuario
+     * @param nombre nombre del usuario
+     * @param usuario valor del usuario
+     * @param pass valor de la contraseña
+     * @param confirPass valor de la constraseña para confirmarlo
+     * @return un verdadero o falso segun la condicion
+     */
     protected boolean validarRegistro(String nombre, String usuario, String pass, String confirPass){
         return true;
     }
-
-    protected void irAlogin() {
-        iniciarVentana();
-    }
-
 }
