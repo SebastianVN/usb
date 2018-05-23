@@ -232,6 +232,7 @@ public class Registro extends javax.swing.JPanel {
 
     /**
      * Metodo para registar un nuevo usuario, obteniedo la informacion del panel
+     * y pasar al inicio de sesion
      */
     private void registrar() {
         String nombre = jTextFieldNombre.getText();

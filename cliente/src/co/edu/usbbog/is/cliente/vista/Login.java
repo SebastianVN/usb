@@ -13,11 +13,15 @@ import javax.swing.JOptionPane;
  * @author Jose
  */
 public class Login extends javax.swing.JPanel {
-
+    /**
+     * Variable de la clase principal para llamar los atributos y metodos de la
+     * clase principal
+     */
     private Principal p;
 
     /**
-     * Creates new form Login
+     * Creando constructor para el panel registro, con la informacion de la
+     * clase principal
      */
     public Login(Principal p) {
         this.p = p;
@@ -115,21 +119,37 @@ public class Login extends javax.swing.JPanel {
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
-
+    /**
+     * Metodo que contiene la accion del boton al ser activado, en este caso 
+     * para ingresar a la calculadora
+     * @param evt muestra el evento que se esta realizando conforme a una accion
+     */
     private void jButtonIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIngresarActionPerformed
         ingresar();
     }//GEN-LAST:event_jButtonIngresarActionPerformed
-
+    /**
+     * Metodo que contiene la accion del boton al ser activado, en este caso
+     * para salir de la aplicacion
+     * @param evt muestra el evento que se esta realizando conforme a una accion
+     */
     private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
         p.salir();
     }//GEN-LAST:event_jButtonCancelarActionPerformed
-
+    /**
+     * Metodo que contiene la accion del boton al ser activado, en este caso
+     * para ir al panel de registro
+     * @param evt 
+     */
     private void jButtonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistrarActionPerformed
         registrar();
     }//GEN-LAST:event_jButtonRegistrarActionPerformed
-
+    /**
+     * Metodo para obtener la informacion del campo contraseña conforme a una 
+     * accion
+     * @param evt muestra el evento que se esta realizando conforme a una accion 
+     */
     private void jPasswordFieldContraseniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordFieldContraseniaActionPerformed
-        ingresar();
+        
     }//GEN-LAST:event_jPasswordFieldContraseniaActionPerformed
 
 
@@ -143,6 +163,9 @@ public class Login extends javax.swing.JPanel {
     private javax.swing.JTextField jTextFieldUsuario;
     // End of variables declaration//GEN-END:variables
 
+    /**
+     * Metodo para ingresa a la calculadora, con su respectivas verificaciones
+     */
     private void ingresar() {
         String usuario = jTextFieldUsuario.getText();
         String pass = jPasswordFieldContrasenia.getText();
@@ -160,7 +183,9 @@ public class Login extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Usuario vacio", "Error al Iniciar Sesion", JOptionPane.ERROR_MESSAGE);
         }
     }
-
+    /**
+     * Metodo para pasar al panel de registro
+     */
     private void registrar() {
         p.irARegistrar();
     }
