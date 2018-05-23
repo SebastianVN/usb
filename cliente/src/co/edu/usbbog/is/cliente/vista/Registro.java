@@ -13,14 +13,19 @@ import javax.swing.JOptionPane;
  * @author Jose
  */
 public class Registro extends javax.swing.JPanel {
-    
+
+    /**
+     * Variable de la clase principal para llamar los atributos y metodos de la
+     * clase principal
+     */
     private Principal p;
 
     /**
-     * Creando constructor para el panel registro
+     * Creando constructor para el panel registro, con la informacion de la
+     * clase principal
      */
     public Registro(Principal p) {
-        this.p=p;
+        this.p = p;
         initComponents();
     }
 
@@ -41,9 +46,9 @@ public class Registro extends javax.swing.JPanel {
         jLabelConfirContrasena = new javax.swing.JLabel();
         jTextFieldUsuario = new javax.swing.JTextField();
         jTextFieldNombre = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        jButtonRegistrar = new javax.swing.JButton();
+        jButtonCancelar = new javax.swing.JButton();
+        jButtonSalir = new javax.swing.JButton();
         jPasswordFieldContrasena = new javax.swing.JPasswordField();
         jPasswordFieldConfirContrasena = new javax.swing.JPasswordField();
 
@@ -70,24 +75,24 @@ public class Registro extends javax.swing.JPanel {
             }
         });
 
-        jButton2.setText("Registrar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButtonRegistrar.setText("Registrar");
+        jButtonRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButtonRegistrarActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Cancelar");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jButtonCancelar.setText("Cancelar");
+        jButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jButtonCancelarActionPerformed(evt);
             }
         });
 
-        jButton4.setText("Salir");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        jButtonSalir.setText("Salir");
+        jButtonSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                jButtonSalirActionPerformed(evt);
             }
         });
 
@@ -123,11 +128,11 @@ public class Registro extends javax.swing.JPanel {
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(13, 13, 13)
-                        .addComponent(jButton2)
+                        .addComponent(jButtonRegistrar)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton3)
+                        .addComponent(jButtonCancelar)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButtonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 63, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -155,39 +160,65 @@ public class Registro extends javax.swing.JPanel {
                     .addComponent(jPasswordFieldConfirContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(jButtonRegistrar)
+                    .addComponent(jButtonCancelar)
+                    .addComponent(jButtonSalir))
                 .addGap(35, 35, 35))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       registrar();
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    /**
+     * Metodo que contine la accion del boton al ser activado, en este caso para
+     * registrar el usuario
+     *
+     * @param evt muestra el evento que se esta realizando conforme a una accion
+     */
+    private void jButtonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistrarActionPerformed
+        registrar();
+    }//GEN-LAST:event_jButtonRegistrarActionPerformed
+    /**
+     * Metodo que contiene la accion del boton al ser activado, en este caso
+     * para cancelar el registro y regresar al Inicio de sesion
+     *
+     * @param evt muestra el evento que se esta realizando conforme a una accion
+     */
+    private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
         login();
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-       p.salir();
-    }//GEN-LAST:event_jButton4ActionPerformed
-
+    }//GEN-LAST:event_jButtonCancelarActionPerformed
+    /**
+     * Metodo que contiene la accion del boton al ser activado, en este caso
+     * para salir de la aplicación
+     *
+     * @param evt muestra el evento que se esta realizando conforme a una accion
+     */
+    private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed
+        p.salir();
+    }//GEN-LAST:event_jButtonSalirActionPerformed
+    /**
+     * Metodo que contiene la accion del campo de texto
+     *
+     * @param evt muestra el evento que se esta realizando conforme a una accion
+     */
     private void jTextFieldNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNombreActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldNombreActionPerformed
-
+    /**
+     * Metoo que contiene la accion del boton al ser activado, en este caso para
+     * limpiar los campos de textos que se encuentrar en el panel
+     *
+     * @param evt
+     */
     private void jButtonLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLimpiarActionPerformed
         limpiar();
     }//GEN-LAST:event_jButtonLimpiarActionPerformed
 
-
+    /**
+     * Declaracion de variable generales
+     */
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButtonCancelar;
     private javax.swing.JButton jButtonLimpiar;
+    private javax.swing.JButton jButtonRegistrar;
+    private javax.swing.JButton jButtonSalir;
     private javax.swing.JLabel jLabelConfirContrasena;
     private javax.swing.JLabel jLabelContrasena;
     private javax.swing.JLabel jLabelNombre;
@@ -199,38 +230,47 @@ public class Registro extends javax.swing.JPanel {
     private javax.swing.JTextField jTextFieldUsuario;
     // End of variables declaration//GEN-END:variables
 
+    /**
+     * Metodo para registar un nuevo usuario, obteniedo la informacion del panel
+     */
     private void registrar() {
         String nombre = jTextFieldNombre.getText();
         String usuario = jTextFieldUsuario.getText();
         String pass = jPasswordFieldContrasena.getText();
         String confirPass = jPasswordFieldConfirContrasena.getText();
-        if(!nombre.equals("")){
-            if(!usuario.equals("")){
-                if(!pass.equals("")){
-                    if(!confirPass.equals("")){
-                        if(p.validarRegistro(nombre, usuario, pass, confirPass)){
+        if (!nombre.equals("")) {
+            if (!usuario.equals("")) {
+                if (!pass.equals("")) {
+                    if (!confirPass.equals("")) {
+                        if (p.validarRegistro(nombre, usuario, pass, confirPass)) {
                             p.irAInicioDeSesion();
-                        }else{
+                        } else {
                             JOptionPane.showMessageDialog(this, "El usuario ya existe", "Error al registrarse", JOptionPane.ERROR_MESSAGE);
                         }
-                    }else{
+                    } else {
                         JOptionPane.showMessageDialog(this, "Confirmar constraseña esta vacia", "Error al registrarse", JOptionPane.ERROR_MESSAGE);
                     }
-                }else{
+                } else {
                     JOptionPane.showMessageDialog(this, "Contraseña vacia", "Error al registrarse", JOptionPane.ERROR_MESSAGE);
                 }
-            }else{
+            } else {
                 JOptionPane.showMessageDialog(this, "Usuario vacio", "Error al registrarse", JOptionPane.ERROR_MESSAGE);
             }
-        }else{
+        } else {
             JOptionPane.showMessageDialog(this, "Nombre vacio", "Error al registrarse", JOptionPane.ERROR_MESSAGE);
         }
     }
 
+    /**
+     * Metodo que me permite pasar a inicio de sesion
+     */
     private void login() {
         p.irAInicioDeSesion();
     }
 
+    /**
+     * Metodo que me permite dejar en blanco los campos de texto del panel
+     */
     private void limpiar() {
         jTextFieldNombre.setText("");
         jTextFieldUsuario.setText("");
