@@ -11,13 +11,26 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author sala3
+ * @author Sebastian
+ * @author Jose
  */
 public class Ventana extends JDialog {
-
-    private Principal principal;
+    /**
+     * 
+     */
+    private Principal principal;/**
+     * 
+     */
     private JPanel jPanel;
-
+    /**
+     * 
+     * @param principal
+     * @param jPanel
+     * @param titulo
+     * @param modal
+     * @param marco
+     * @param opcionDeCerrado 
+     */
     public Ventana(Principal principal, JPanel jPanel, String titulo, boolean modal, boolean marco,  int opcionDeCerrado) {
         super(principal, titulo, modal);
         this.setDefaultCloseOperation(opcionDeCerrado);

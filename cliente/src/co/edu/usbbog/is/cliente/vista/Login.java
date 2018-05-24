@@ -174,7 +174,7 @@ public class Login extends javax.swing.JPanel {
                 if (p.validar(usuario, pass)) {
                     p.irACalculadora();
                 } else {
-                    JOptionPane.showMessageDialog(this, "Usuario o Contraseña errados", "Error al Iniciar Sesion", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "Usuario o Contraseña errados o usuario no registrado", "Error al Iniciar Sesion", JOptionPane.ERROR_MESSAGE);
                 }
             } else {
                 JOptionPane.showMessageDialog(this, "Contraseña vacia", "Error al Iniciar Sesion", JOptionPane.ERROR_MESSAGE);
