@@ -151,7 +151,6 @@ public class Principal extends JFrame {
      * @return un verdadero o falso segun la condicion
      */
     protected  boolean validar(String usuario, String pass) {
-        System.out.println(operar.operacion("580 + 43 ="));
         return operar.iniciarSesion(usuario, pass);
     }/**
      * Metodo para validad el resgistro y agregar el nuevo usuario
