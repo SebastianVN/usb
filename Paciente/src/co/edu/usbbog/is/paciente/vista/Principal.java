@@ -21,6 +21,7 @@ public class Principal extends JFrame {
     private Registro registro;
     private Operar operar;
     private Pantalla_inicial_admin pa;
+    private Usuarios_lista ul;
     
 
     //componentes
@@ -165,13 +166,23 @@ public class Principal extends JFrame {
         return true;
     }
 
-    void irAPantallaAdmin() {
+    protected void irAPantallaAdmin() {
         cerrarVentana();
         iniciarMarco();
         //agrega el panelinicial
         pa = new Pantalla_inicial_admin(this);
         pa.setVisible(true);
         add(pa);
+        //se ajusta el frame
+        pack();
+        //centra la aplicacion 
+        setLocationRelativeTo(null);
+    }
+
+    protected void irAUsuarios() {
+        ul = new Usuarios_lista(this);
+        ul.setVisible(true);
+        add(ul);
         //se ajusta el frame
         pack();
         //centra la aplicacion 
