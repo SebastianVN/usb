@@ -10,11 +10,12 @@ package co.edu.usbbog.is.paciente.vista;
  * @author Sebastian
  */
 public class Servicios extends javax.swing.JPanel {
-
+    private Principal p;
     /**
      * Creates new form Servicios
      */
-    public Servicios() {
+    public Servicios(Principal p) {
+        this.p = p;
         initComponents();
     }
 
