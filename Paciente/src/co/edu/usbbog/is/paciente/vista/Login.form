@@ -103,6 +103,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldUsuario">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldUsuarioActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JPasswordField" name="jPasswordFieldContrasenia">
       <Events>

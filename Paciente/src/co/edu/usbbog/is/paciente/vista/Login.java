@@ -71,6 +71,12 @@ public class Login extends javax.swing.JPanel {
 
         jLabelContrasenia.setText("Contraseña:");
 
+        jTextFieldUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldUsuarioActionPerformed(evt);
+            }
+        });
+
         jPasswordFieldContrasenia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jPasswordFieldContraseniaActionPerformed(evt);
@@ -156,6 +162,10 @@ public class Login extends javax.swing.JPanel {
     private void jPasswordFieldContraseniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordFieldContraseniaActionPerformed
 
     }//GEN-LAST:event_jPasswordFieldContraseniaActionPerformed
+
+    private void jTextFieldUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldUsuarioActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

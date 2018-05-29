@@ -28,6 +28,10 @@ public class Principal extends JFrame {
     private Eps eps;
     private Punto_atencion pt;
     private Reportes r;
+    private Ver_Perfil vp;
+    private Historial h;
+    private ForoPaciente fp;
+    private Punto_atencion_paciente pp;
     
 
     //componentes
@@ -114,8 +118,23 @@ public class Principal extends JFrame {
         }
         if(r!=null){
             remove(r);
-            r=null;
-                    
+            r=null;      
+        }
+        if(vp!=null){
+            remove(vp);
+            vp=null;      
+        }
+        if(h!=null){
+            remove(h);
+            h=null;      
+        }
+        if(fp!=null){
+            remove(fp);
+            fp=null;      
+        }
+        if(pp!=null){
+            remove(pp);
+            pp=null;
         }
         //hacer lo anterior parra cada panel que este en el marco
     }
@@ -278,6 +297,47 @@ public class Principal extends JFrame {
         pa = new Pantalla_inicial_admin(this);
         pa.setVisible(true);
         add(pa);
+        //se ajusta el frame
+        pack();
+        //centra la aplicacion 
+        setLocationRelativeTo(null);
+    }
+    
+    protected void IrAVerPerfil(){
+        iniciarMarco();
+        vp = new Ver_Perfil(this);
+        vp.setVisible(true);
+        add(vp);
+        //se ajusta el frame
+        pack();
+        //centra la aplicacion 
+        setLocationRelativeTo(null);
+    }
+    protected void IrAHistorial(){
+        iniciarMarco();
+        h = new Historial(this);
+        h.setVisible(true);
+        add(h);
+        //se ajusta el frame
+        pack();
+        //centra la aplicacion 
+        setLocationRelativeTo(null);
+    }
+    protected void  IrAForoPaciente(){
+        iniciarMarco();
+        fp = new ForoPaciente(this);
+        fp.setVisible(true);
+        add(fp);
+        //se ajusta el frame
+        pack();
+        //centra la aplicacion 
+        setLocationRelativeTo(null);
+    }
+   protected void  IrAPuntoPaciente(){
+        iniciarMarco();
+        pp = new Punto_atencion_paciente(this);
+        pp.setVisible(true);
+        add(pp);
         //se ajusta el frame
         pack();
         //centra la aplicacion 

@@ -30,16 +30,16 @@ public class Pantalla_inicial_paciente extends javax.swing.JPanel {
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jButtonVerPerfil = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jButtonCerrarSesion = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jButton7 = new javax.swing.JButton();
+        jButtonForoPaciente = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        jButtonPuntoPaciente = new javax.swing.JButton();
 
         jButton1.setBackground(new java.awt.Color(0, 208, 255));
         jButton1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -50,12 +50,12 @@ public class Pantalla_inicial_paciente extends javax.swing.JPanel {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(0, 208, 255));
-        jButton2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jButton2.setText("Ver Perfil");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButtonVerPerfil.setBackground(new java.awt.Color(0, 208, 255));
+        jButtonVerPerfil.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jButtonVerPerfil.setText("Ver Perfil");
+        jButtonVerPerfil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButtonVerPerfilActionPerformed(evt);
             }
         });
 
@@ -91,12 +91,12 @@ public class Pantalla_inicial_paciente extends javax.swing.JPanel {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/usbbog/is/paciente/imagenes/profile.png"))); // NOI18N
         jLabel4.setText("  Sebastian");
 
-        jButton7.setBackground(new java.awt.Color(0, 208, 255));
-        jButton7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jButton7.setText("Foro");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        jButtonForoPaciente.setBackground(new java.awt.Color(0, 208, 255));
+        jButtonForoPaciente.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jButtonForoPaciente.setText("Foro");
+        jButtonForoPaciente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                jButtonForoPacienteActionPerformed(evt);
             }
         });
 
@@ -104,12 +104,12 @@ public class Pantalla_inicial_paciente extends javax.swing.JPanel {
         jButton8.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jButton8.setText("Rutas de atención");
 
-        jButton6.setBackground(new java.awt.Color(0, 208, 255));
-        jButton6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jButton6.setText("Puntos de atención");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        jButtonPuntoPaciente.setBackground(new java.awt.Color(0, 208, 255));
+        jButtonPuntoPaciente.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jButtonPuntoPaciente.setText("Puntos de atención");
+        jButtonPuntoPaciente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                jButtonPuntoPacienteActionPerformed(evt);
             }
         });
 
@@ -128,12 +128,12 @@ public class Pantalla_inicial_paciente extends javax.swing.JPanel {
                         .addComponent(jButtonCerrarSesion))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButtonVerPerfil, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButtonForoPaciente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jButtonPuntoPaciente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(25, 25, 25)
@@ -160,15 +160,15 @@ public class Pantalla_inicial_paciente extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButton1)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton2)
+                        .addComponent(jButtonVerPerfil)
                         .addGap(18, 18, 18)
                         .addComponent(jButton3)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton7)
+                        .addComponent(jButtonForoPaciente)
                         .addGap(18, 18, 18)
                         .addComponent(jButton8)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton6))
+                        .addComponent(jButtonPuntoPaciente))
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -178,21 +178,25 @@ public class Pantalla_inicial_paciente extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButtonVerPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerPerfilActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+        p.IrAVerPerfil();
+    }//GEN-LAST:event_jButtonVerPerfilActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        p.IrAHistorial();
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void jButtonPuntoPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPuntoPacienteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+        p.IrAPuntoPaciente();
+    }//GEN-LAST:event_jButtonPuntoPacienteActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void jButtonForoPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonForoPacienteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+        p.IrAForoPaciente();
+    }//GEN-LAST:event_jButtonForoPacienteActionPerformed
 
     private void jButtonCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCerrarSesionActionPerformed
         p.irAInicioDeSesion();
@@ -201,12 +205,12 @@ public class Pantalla_inicial_paciente extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButtonCerrarSesion;
+    private javax.swing.JButton jButtonForoPaciente;
+    private javax.swing.JButton jButtonPuntoPaciente;
+    private javax.swing.JButton jButtonVerPerfil;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
