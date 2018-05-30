@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.persistence.Persistence;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -121,4 +122,23 @@ public class Operar {
         
 
     }
+    
+    public boolean Registrar(String nombre, String usuario, String pass, String confirPass) {
+        UsuarioJpaController ujc = new UsuarioJpaController(Persistence.createEntityManagerFactory("clientePU"));
+        Usuario u = new Usuario();
+        try {
+            
+            u.setNombre(nombre);
+            u.setLogin(usuario);
+            u.setPass(pass);
+            ujc.create(u);
+            JOptionPane.showMessageDialog(null, "Se Gusrdaron Los datos");
+            return true;
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "error");
+        return false;
+        }
+    
+    }
+
 }

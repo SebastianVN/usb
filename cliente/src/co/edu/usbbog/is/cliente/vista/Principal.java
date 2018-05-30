@@ -161,6 +161,14 @@ public class Principal extends JFrame {
      * @return un verdadero o falso segun la condicion
      */
     protected boolean validarRegistro(String nombre, String usuario, String pass, String confirPass){
+       
+        if(operar.Registrar(nombre, usuario, pass, confirPass)){
+        
         return true;
+        }else{
+            return false;
+        }
+        
     }
+
 }

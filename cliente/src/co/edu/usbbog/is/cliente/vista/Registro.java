@@ -246,22 +246,7 @@ public class Registro extends javax.swing.JPanel {
             if (!usuario.equals("")) {
                 if (!pass.equals("")) {
                     if (!confirPass.equals("")) {
-                        if (p.validarRegistro(nombre, usuario, pass, confirPass)) {
-                            
-                             try {
-                                Usuario u = new Usuario();
-
-                                u.setNombre(txtNombre.getText());
-                                u.setLogin(txtUsuario.getText());
-                                u.setPass(txtContraseña.getText());
-                                CUsuario.create(u);
-                                JOptionPane.showMessageDialog(null,"Se Gusrdaron Los datos");
-                            } catch (Exception ex) {
-                                JOptionPane.showMessageDialog(null,"error");
-                            }
-
-                            
-                            
+                        if (p.validarRegistro(nombre, usuario, pass, confirPass)) {                            
                             p.irAInicioDeSesion();
                         } else {
                             JOptionPane.showMessageDialog(this, "El usuario ya existe", "Error al registrarse", JOptionPane.ERROR_MESSAGE);
