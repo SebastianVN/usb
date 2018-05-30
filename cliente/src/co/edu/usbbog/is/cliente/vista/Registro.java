@@ -5,6 +5,8 @@
  */
 package co.edu.usbbog.is.cliente.vista;
 
+import co.edu.usbbog.is.cliente.controlador.jpa.UsuarioJpaController;
+import co.edu.usbbog.is.cliente.modelo.entidades.Usuario;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,6 +21,7 @@ public class Registro extends javax.swing.JPanel {
      * clase principal
      */
     private Principal p;
+    private UsuarioJpaController CUsuario;
 
     /**
      * Creando constructor para el panel registro, con la informacion de la
@@ -44,12 +47,12 @@ public class Registro extends javax.swing.JPanel {
         jLabelUsuario = new javax.swing.JLabel();
         jLabelContrasena = new javax.swing.JLabel();
         jLabelConfirContrasena = new javax.swing.JLabel();
-        jTextFieldUsuario = new javax.swing.JTextField();
-        jTextFieldNombre = new javax.swing.JTextField();
+        txtUsuario = new javax.swing.JTextField();
+        txtNombre = new javax.swing.JTextField();
         jButtonRegistrar = new javax.swing.JButton();
         jButtonCancelar = new javax.swing.JButton();
         jButtonSalir = new javax.swing.JButton();
-        jPasswordFieldContrasena = new javax.swing.JPasswordField();
+        txtContraseña = new javax.swing.JPasswordField();
         jPasswordFieldConfirContrasena = new javax.swing.JPasswordField();
 
         jLabelRegistrar.setText("Registrar");
@@ -69,9 +72,9 @@ public class Registro extends javax.swing.JPanel {
 
         jLabelConfirContrasena.setText("Confirmar contraseña:");
 
-        jTextFieldNombre.addActionListener(new java.awt.event.ActionListener() {
+        txtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldNombreActionPerformed(evt);
+                txtNombreActionPerformed(evt);
             }
         });
 
@@ -121,9 +124,9 @@ public class Registro extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextFieldNombre)
-                                    .addComponent(jTextFieldUsuario)
-                                    .addComponent(jPasswordFieldContrasena)
+                                    .addComponent(txtNombre)
+                                    .addComponent(txtUsuario)
+                                    .addComponent(txtContraseña)
                                     .addComponent(jPasswordFieldConfirContrasena, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
@@ -145,15 +148,15 @@ public class Registro extends javax.swing.JPanel {
                 .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelNombre)
-                    .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelUsuario)
-                    .addComponent(jTextFieldUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelContrasena)
-                    .addComponent(jPasswordFieldContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelConfirContrasena)
@@ -198,9 +201,9 @@ public class Registro extends javax.swing.JPanel {
      *
      * @param evt muestra el evento que se esta realizando conforme a una accion
      */
-    private void jTextFieldNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNombreActionPerformed
+    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldNombreActionPerformed
+    }//GEN-LAST:event_txtNombreActionPerformed
     /**
      * Metoo que contiene la accion del boton al ser activado, en este caso para
      * limpiar los campos de textos que se encuentrar en el panel
@@ -225,9 +228,9 @@ public class Registro extends javax.swing.JPanel {
     private javax.swing.JLabel jLabelRegistrar;
     private javax.swing.JLabel jLabelUsuario;
     private javax.swing.JPasswordField jPasswordFieldConfirContrasena;
-    private javax.swing.JPasswordField jPasswordFieldContrasena;
-    private javax.swing.JTextField jTextFieldNombre;
-    private javax.swing.JTextField jTextFieldUsuario;
+    private javax.swing.JPasswordField txtContraseña;
+    private javax.swing.JTextField txtNombre;
+    private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 
     /**
@@ -235,15 +238,30 @@ public class Registro extends javax.swing.JPanel {
      * y pasar al inicio de sesion
      */
     private void registrar() {
-        String nombre = jTextFieldNombre.getText();
-        String usuario = jTextFieldUsuario.getText();
-        String pass = jPasswordFieldContrasena.getText();
+        String nombre = txtNombre.getText();
+        String usuario = txtUsuario.getText();
+        String pass = txtContraseña.getText();
         String confirPass = jPasswordFieldConfirContrasena.getText();
         if (!nombre.equals("")) {
             if (!usuario.equals("")) {
                 if (!pass.equals("")) {
                     if (!confirPass.equals("")) {
                         if (p.validarRegistro(nombre, usuario, pass, confirPass)) {
+                            
+                             try {
+                                Usuario u = new Usuario();
+
+                                u.setNombre(txtNombre.getText());
+                                u.setLogin(txtUsuario.getText());
+                                u.setPass(txtContraseña.getText());
+                                CUsuario.create(u);
+                                JOptionPane.showMessageDialog(null,"Se Gusrdaron Los datos");
+                            } catch (Exception ex) {
+                                JOptionPane.showMessageDialog(null,"error");
+                            }
+
+                            
+                            
                             p.irAInicioDeSesion();
                         } else {
                             JOptionPane.showMessageDialog(this, "El usuario ya existe", "Error al registrarse", JOptionPane.ERROR_MESSAGE);
@@ -273,9 +291,9 @@ public class Registro extends javax.swing.JPanel {
      * Metodo que me permite dejar en blanco los campos de texto del panel
      */
     private void limpiar() {
-        jTextFieldNombre.setText("");
-        jTextFieldUsuario.setText("");
-        jPasswordFieldContrasena.setText("");
+        txtNombre.setText("");
+        txtUsuario.setText("");
+        txtContraseña.setText("");
         jPasswordFieldConfirContrasena.setText("");
     }
 }
