@@ -66,24 +66,26 @@ public class Operar {
                 currentUser = null;
                 return false;
             }
-        } else {   
+        } else {
             currentUser = null;
             return false;
         }
     }
-    
-    public void cerrarSesion(){
-        currentUser= null;
+
+    public void cerrarSesion() {
+        currentUser = null;
     }
-    public String operacion(String ecuacion){
-        String ecu[]=ecuacion.split(" ");
-        switch(ecu[1]){
+
+    public String operacion(String ecuacion) {
+        String ecu[] = ecuacion.split(" ");
+        switch (ecu[1]) {
             case "+":
-                return sumar(ecu[0],ecu[2]);
-                
+                return sumar(ecu[0], ecu[2]);
+
         }
         return "hola";
     }
+
     public String sumar(String num1, String num2) {
         Operacion operacion = new Operacion(Double.parseDouble(num1), Double.parseDouble(num2), '+', "");
         Socket clienteSocket = null;
@@ -100,7 +102,7 @@ public class Operar {
             ois.close();
             oos.flush();
             oos.close();
-            registrarHistorial(operacion.getOpe()+"",operacion.getNum1(),operacion.getNum2(), operacion.getRes());
+            registrarHistorial(operacion.getOpe() + "", operacion.getNum1(), operacion.getNum2(), operacion.getRes());
             return operacion.getRes() + "";
         } catch (IOException e) {
             return "Error de Conexion";
@@ -119,26 +121,24 @@ public class Operar {
         registro.setUs(currentUser);
         HistorialJpaController hjc = new HistorialJpaController(Persistence.createEntityManagerFactory("clientePU"));
         hjc.create(registro);
-        
 
     }
-    
+
     public boolean Registrar(String nombre, String usuario, String pass, String confirPass) {
         UsuarioJpaController ujc = new UsuarioJpaController(Persistence.createEntityManagerFactory("clientePU"));
         Usuario u = new Usuario();
         try {
-            
             u.setNombre(nombre);
             u.setLogin(usuario);
             u.setPass(pass);
             ujc.create(u);
-            JOptionPane.showMessageDialog(null, "Se Gusrdaron Los datos");
+            JOptionPane.showMessageDialog(null, "Se Guardaron Los datos");
             return true;
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, "error");
-        return false;
+            return false;
         }
-    
+
     }
 
 }
