@@ -33,7 +33,7 @@ public class DivisionServer {
     /**
      * Metodo principal que recibe un objeto por parte del cliente
      *
-     * @param args
+     * @param args parametros del programa 
      */
     public static void main(String[] args) {
         //Utilizamos un try and catch para manejar excepciones al utilizar sockets
