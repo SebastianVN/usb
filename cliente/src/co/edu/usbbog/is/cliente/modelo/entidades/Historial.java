@@ -55,7 +55,7 @@ public class Historial implements Serializable {
     private double res;
     @JoinColumn(name = "us", referencedColumnName = "id", nullable = false)
     @ManyToOne(optional = false)
-    private Usuario us;
+    public Usuario us;
 
     public Historial() {
     }

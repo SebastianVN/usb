@@ -562,6 +562,7 @@ public class Calculadora extends javax.swing.JPanel {
 
     private void jButtonHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHistorialActionPerformed
         // TODO add your handling code here:
+        p.irAHistorial();
 
     }//GEN-LAST:event_jButtonHistorialActionPerformed
 

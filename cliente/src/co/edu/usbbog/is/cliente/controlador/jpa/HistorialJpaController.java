@@ -7,21 +7,28 @@ package co.edu.usbbog.is.cliente.controlador.jpa;
 
 import co.edu.usbbog.is.cliente.controlador.jpa.exceptions.NonexistentEntityException;
 import co.edu.usbbog.is.cliente.modelo.entidades.Historial;
+import co.edu.usbbog.is.cliente.modelo.entidades.Historial_;
 import java.io.Serializable;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import co.edu.usbbog.is.cliente.modelo.entidades.Usuario;
+import co.edu.usbbog.is.cliente.vista.Principal;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.NoResultException;
+import javax.persistence.criteria.Predicate;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author 204
  */
 public class HistorialJpaController implements Serializable {
+    
+    private Principal p;
 
     public HistorialJpaController(EntityManagerFactory emf) {
         this.emf = emf;
@@ -120,6 +127,7 @@ public class HistorialJpaController implements Serializable {
     }
 
     public List<Historial> findHistorialEntities() {
+   
         return findHistorialEntities(true, -1, -1);
     }
 
@@ -131,8 +139,9 @@ public class HistorialJpaController implements Serializable {
         EntityManager em = getEntityManager();
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-            cq.select(cq.from(Historial.class));
             Query q = em.createQuery(cq);
+          
+            
             if (!all) {
                 q.setMaxResults(maxResults);
                 q.setFirstResult(firstResult);
@@ -164,5 +173,7 @@ public class HistorialJpaController implements Serializable {
             em.close();
         }
     }
-    
+
+
+
 }

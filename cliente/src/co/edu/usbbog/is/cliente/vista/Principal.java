@@ -5,6 +5,7 @@
  */
 package co.edu.usbbog.is.cliente.vista;
 
+import co.edu.usbbog.is.cliente.controlador.jpa.UsuarioJpaController;
 import co.edu.usbbog.is.cliente.controlador.logica.Operar;
 import javax.swing.JFrame;
 
@@ -20,6 +21,8 @@ public class Principal extends JFrame {
     private Calculadora calculadora;
     private Registro registro;
     private Operar operar;
+    private Historial historial;
+    String UserLogin;
     
     
 
@@ -77,7 +80,13 @@ public class Principal extends JFrame {
             remove(registro);
             registro=null;
         }
+        if(historial!=null){
+            remove(historial);
+            historial=null;
+        }
         //hacer lo anterior parra cada panel que este en el marco
+        
+    
     }
     /**
      * Metodo para iniciar el marco
@@ -120,6 +129,19 @@ public class Principal extends JFrame {
         //centra la aplicacion 
         setLocationRelativeTo(null);
     }
+    
+    protected void VolverACalculadora() {
+        
+        iniciarMarco();
+        //agrega el panelinicial
+        calculadora = new Calculadora(this);
+        calculadora.setVisible(true);
+        add(calculadora);
+        //se ajusta el frame
+        pack();
+        //centra la aplicacion 
+        setLocationRelativeTo(null);
+    }
     /**
      * Metodo para ir al panel de registrar
      */
@@ -145,6 +167,22 @@ public class Principal extends JFrame {
         ventana = new Ventana(this, login, "Ventana", false, false, DO_NOTHING_ON_CLOSE);
     }
     
+    /**
+     * Metodo para ir al historial
+     */
+    protected void irAHistorial() {
+        iniciarMarco();
+        //agrega el panelinicial
+        historial = new Historial(this);
+        historial.setVisible(true);
+        add(historial);
+        //se ajusta el frame
+        pack();
+        //centra la aplicacion 
+        setLocationRelativeTo(null);
+    }
+    
+    
     //metodos de logica
     /**
      * Metodo para validar el inicio de sesion de un usuario
@@ -153,6 +191,7 @@ public class Principal extends JFrame {
      * @return un verdadero o falso segun la condicion
      */
     protected  boolean validar(String usuario, String pass) {
+        UserLogin= usuario;
         return operar.iniciarSesion(usuario, pass);
     }/**
      * Metodo para validad el resgistro y agregar el nuevo usuario
@@ -172,5 +211,11 @@ public class Principal extends JFrame {
         }
         
     }
+    
+    public int Obtener(){
+        
+        return operar.ObtenerUs();
+    }
+
 
 }

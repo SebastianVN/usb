@@ -54,6 +54,7 @@ public class Operar {
      * @param args
      */
     private Usuario currentUser;
+    private Historial currentHistorial;
 
     public boolean iniciarSesion(String user, String pass) {
         UsuarioJpaController ujc = new UsuarioJpaController(Persistence.createEntityManagerFactory("clientePU"));
@@ -140,5 +141,16 @@ public class Operar {
         }
 
     }
+    
+    public int ObtenerUs(){
+        
+        int x = currentUser.getId();
+        System.out.println(""+x);
+        
+       return currentUser.getId();
+       
+    }
+
+    
 
 }

@@ -40,7 +40,7 @@ public class Usuario implements Serializable {
     @Id
     @Basic(optional = false)
     @Column(nullable = false)
-    private Integer id;
+    public Integer id;
     @Basic(optional = false)
     @Column(nullable = false, length = 40)
     private String nombre;

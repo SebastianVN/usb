@@ -5,20 +5,94 @@
  */
 package co.edu.usbbog.is.cliente.vista;
 
+import co.edu.usbbog.is.cliente.controlador.jpa.HistorialJpaController;
+import co.edu.usbbog.is.cliente.controlador.jpa.UsuarioJpaController;
+import co.edu.usbbog.is.cliente.modelo.entidades.Usuario;
+import java.util.List;
+import javax.persistence.Persistence;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author jofa7
  */
 public class Historial extends javax.swing.JPanel {
     private Principal p;
+    HistorialJpaController hjc = new HistorialJpaController(Persistence.createEntityManagerFactory("clientePU"));
+     
     /**
      * Creates new form Calculadora
      */
     public Historial(Principal p) {
         this.p=p;
         initComponents();
+        CrearModelo2();
+        Cargar_Informacion();
     }
+    
+    DefaultTableModel modelo2;
 
+    private void CrearModelo2() {
+        try {
+            modelo2 = (new DefaultTableModel(
+                    null, new String[]{
+                        "Operacion", "Numero 1",
+                        "Numero 2", "Resultado"}) {
+                Class[] types = new Class[]{
+                    java.lang.String.class,
+                    java.lang.String.class,
+                    java.lang.String.class,
+                    java.lang.String.class
+                };
+                boolean[] canEdit = new boolean[]{
+                    false, false, false, false
+                };
+
+                @Override
+                public Class getColumnClass(int columnIndex) {
+                    return types[columnIndex];
+                }
+
+                @Override
+                public boolean isCellEditable(int rowIndex, int colIndex) {
+                    return canEdit[colIndex];
+                }
+            });
+            tabla.setModel(modelo2);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.toString() + "error2");
+        }
+ }
+    //*
+    //Este Metodo traera la informacion de la tabla Historial
+    public void Cargar_Informacion(){
+     
+        try{
+            Object o[]=null;
+            List<co.edu.usbbog.is.cliente.modelo.entidades.Historial> ListH= hjc.findHistorialEntities();
+            int user =p.Obtener();
+            System.out.println("Este es el valor: "+user);
+            for(int i=0;i<ListH.size() ;i++){
+                
+                
+                System.out.println("Valor del Historial:   "+ListH.get(i).getUs());
+                
+                modelo2.addRow(o);
+                modelo2.setValueAt(ListH.get(i).getOperacion(), i, 0);
+                modelo2.setValueAt(ListH.get(i).getNum1(), i, 1);
+                modelo2.setValueAt(ListH.get(i).getNum2(), i, 2);
+                modelo2.setValueAt(ListH.get(i).getRes(), i, 3);
+                
+            }
+            
+        }catch(Exception e){
+        JOptionPane.showMessageDialog(null,e.getMessage());
+    }
+        
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -31,7 +105,7 @@ public class Historial extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabla = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jButtonRegresar = new javax.swing.JButton();
@@ -49,18 +123,18 @@ public class Historial extends javax.swing.JPanel {
 
         jLabel1.setText("Historial");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "ID", "Operación", "num1", "num2", "Resultado", "Usuario"
+
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tabla);
 
         jLabel2.setText("Usuario:");
 
@@ -114,7 +188,7 @@ public class Historial extends javax.swing.JPanel {
      */ 
     private void jButtonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegresarActionPerformed
         // TODO add your handling code here:
-        p.irACalculadora();
+        p.VolverACalculadora();
     }//GEN-LAST:event_jButtonRegresarActionPerformed
 
 
@@ -125,6 +199,6 @@ public class Historial extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tabla;
     // End of variables declaration//GEN-END:variables
 }
