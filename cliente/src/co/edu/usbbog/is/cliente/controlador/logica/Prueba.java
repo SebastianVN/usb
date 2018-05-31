@@ -44,8 +44,6 @@ public class Prueba {
 
     /**
      * Metodo principal que envia un objeto al servidor que es una operacion
-     *
-     * @param args
      */
     
     public  void hola() {
