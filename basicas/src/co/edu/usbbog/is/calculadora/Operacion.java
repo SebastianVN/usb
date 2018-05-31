@@ -54,6 +54,7 @@ public class Operacion implements Serializable {
      * @param num1 representa el primer numero
      * @param num2 representa el segundo numero
      * @param ope representa la operacion
+     * @param info informacion de la operacion 
      */
     public Operacion(double num1, double num2, char ope, String info) {
         this.num1 = num1;
@@ -148,7 +149,7 @@ public class Operacion implements Serializable {
     /**
      * Cambia la información de la opoeración
      *
-     * @param info
+     * @param info informaion de la operacion 
      */
     public void setInfo(String info) {
         this.info = info;

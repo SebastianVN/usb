@@ -33,7 +33,7 @@ public class BasicasServer {
      * Metodo Principal que recibe un objeto de cliente, que dicho objeto es una
      * operacion
      *
-     * @param args
+     * @param args parametros de la aplicacion 
      */
     public static void main(String[] args) {
         //Utilizamos un try and catch para manejar excepciones al utilizar sockets
