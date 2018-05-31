@@ -74,9 +74,9 @@ public class OperarTest {
     @Test
     public void testOperacion() {
         System.out.println("operacion");
-        String ecuacion = "1000 + 3 =";
+        String ecuacion = "3 + 3 =";
         Operar instance = new Operar();
-        String expResult = "1003.0";
+        String expResult = "6";
         String result = instance.operacion(ecuacion);
         if(!expResult.equals(result)){
             fail("The test case is a prototype.");
