@@ -14,8 +14,8 @@ import co.edu.usbbog.is.calculadora.Operacion;
 public class Operador {
     /**
      * Metodo operacion el cual valida la operacion seleccionada y realiza el proceso
-     * @param o
-     * @return 
+     * @param o operacion a ejecutar
+     * @return operacion realizada 
      */
     public Operacion operar(Operacion o){
         if(o.getOpe()=='w'){
