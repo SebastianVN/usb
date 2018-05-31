@@ -15,9 +15,10 @@ import javax.swing.JOptionPane;
 public class Calculadora extends javax.swing.JPanel {
 
     private Principal p;
-    /**
-     * Creates new form Calculadora
-     */
+   /**
+    * Metodo constructor de Calculadora
+    * @param p Llama al frame principal
+    */
     public Calculadora(Principal p) {
         this.p=p;
         initComponents();

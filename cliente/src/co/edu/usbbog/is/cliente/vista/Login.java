@@ -18,10 +18,10 @@ public class Login extends javax.swing.JPanel {
      * clase principal
      */
     private Principal p;
-
+    
     /**
-     * Creando constructor para el panel registro, con la informacion de la
-     * clase principal
+     * 
+     * @param p llama al jframe principal
      */
     public Login(Principal p) {
         this.p = p;
@@ -138,7 +138,7 @@ public class Login extends javax.swing.JPanel {
     /**
      * Metodo que contiene la accion del boton al ser activado, en este caso
      * para ir al panel de registro
-     * @param evt 
+     * @param evt Muestra el evento que se realiza conforme una accion
      */
     private void jButtonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistrarActionPerformed
         registrar();

@@ -24,8 +24,8 @@ public class Registro extends javax.swing.JPanel {
     private UsuarioJpaController CUsuario;
 
     /**
-     * Creando constructor para el panel registro, con la informacion de la
-     * clase principal
+     * Este es el metodo contructor de registro
+     * @param p Llama al jFrame principal
      */
     public Registro(Principal p) {
         this.p = p;
@@ -208,7 +208,7 @@ public class Registro extends javax.swing.JPanel {
      * Metoo que contiene la accion del boton al ser activado, en este caso para
      * limpiar los campos de textos que se encuentrar en el panel
      *
-     * @param evt
+     * @param evt muestrra el evento conforme una accion
      */
     private void jButtonLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLimpiarActionPerformed
         limpiar();

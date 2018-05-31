@@ -17,11 +17,15 @@ import javax.swing.table.DefaultTableModel;
  */
 public class VerHistorial extends javax.swing.JPanel {
 
-    private Principal p;
-
+    
     /**
-     * Creates new form Calculadora
+     * VAriable para llamar el panel inicial
      */
+    private Principal p;
+   /**
+    * Metodo constructor de verHistorial
+    * @param p Llama al frame principal
+    */
     public VerHistorial(Principal p) {
         this.p = p;
         initComponents();
@@ -30,7 +34,9 @@ public class VerHistorial extends javax.swing.JPanel {
     }
 
     DefaultTableModel dataModel;
-
+    /**
+     * Metodo para generar tabla en el panel
+     */
     private void crearTabla() {
         try {
             dataModel = (new DefaultTableModel(
@@ -63,8 +69,9 @@ public class VerHistorial extends javax.swing.JPanel {
         }
     }
 
-    //*
-    //Este Metodo traera la informacion de la tabla VerHistorial
+    /**
+     * Metodo para cargar los datos de la BD
+     */
     public void cargarTabla() {
 
         try {
@@ -179,9 +186,10 @@ public class VerHistorial extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
     /**
-     * Void jButton encargado de Regresar del panel historial al panel
-     * calculadora (.)
+     * Metodo para regresar a Panel calculadora
+     * @param evt Muestra evento conforme una accion
      */
     private void jButtonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegresarActionPerformed
         // TODO add your handling code here:

@@ -150,7 +150,7 @@ public class Operacion implements Serializable {
     /**
      * Cambia la información de la opoeración
      *
-     * @param info
+     * @param info para informar el estado de la operacion
      */
     public void setInfo(String info) {
         this.info = info;
