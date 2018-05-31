@@ -140,5 +140,161 @@ public class Operar {
         }
 
     }
+    
+     public String potencia(String num1, String num2) {
+        Operacion operacion = new Operacion(Double.parseDouble(num1), Double.parseDouble(num2), '^', "");
+        Socket clienteSocket = null;
+        ObjectOutputStream oos = null;
+        ObjectInputStream ois = null;
+        // Utilizamos un try and catch para manejar excepciones al utilizar sockets
+        try {
+            clienteSocket = new Socket(HOST, PUERTO_POTENCIA);
+            oos = new ObjectOutputStream(clienteSocket.getOutputStream());
+            oos.writeObject(operacion);
+            ois = new ObjectInputStream(clienteSocket.getInputStream());
+            operacion = (Operacion) ois.readObject();
+            System.out.println(operacion.toString());
+            ois.close();
+            oos.flush();
+            oos.close();
+            registrarHistorial(operacion.getOpe() + "", operacion.getNum1(), operacion.getNum2(), operacion.getRes());
+            return operacion.getRes() + "";
+        } catch (IOException e) {
+            return "Error de Conexion";
+        } catch (ClassNotFoundException ex) {
+            return "Error de tipo de dato";
+        }
 
+     }
+     
+     
+     public String restar(String num1, String num2) {
+        Operacion operacion = new Operacion(Double.parseDouble(num1), Double.parseDouble(num2), '-', "");
+        Socket clienteSocket = null;
+        ObjectOutputStream oos = null;
+        ObjectInputStream ois = null;
+        // Utilizamos un try and catch para manejar excepciones al utilizar sockets
+        try {
+            clienteSocket = new Socket(HOST, PUERTO_BASICAS);
+            oos = new ObjectOutputStream(clienteSocket.getOutputStream());
+            oos.writeObject(operacion);
+            ois = new ObjectInputStream(clienteSocket.getInputStream());
+            operacion = (Operacion) ois.readObject();
+            System.out.println(operacion.toString());
+            ois.close();
+            oos.flush();
+            oos.close();
+            registrarHistorial(operacion.getOpe() + "", operacion.getNum1(), operacion.getNum2(), operacion.getRes());
+            return operacion.getRes() + "";
+        } catch (IOException e) {
+            return "Error de Conexion";
+        } catch (ClassNotFoundException ex) {
+            return "Error de tipo de dato";
+        }
+
+    }
+     
+    public String dividir(String num1, String num2) {
+        Operacion operacion = new Operacion(Double.parseDouble(num1), Double.parseDouble(num2), '/', "");
+        Socket clienteSocket = null;
+        ObjectOutputStream oos = null;
+        ObjectInputStream ois = null;
+        // Utilizamos un try and catch para manejar excepciones al utilizar sockets
+        try {
+            clienteSocket = new Socket(HOST, PUERTO_DIVISION);
+            oos = new ObjectOutputStream(clienteSocket.getOutputStream());
+            oos.writeObject(operacion);
+            ois = new ObjectInputStream(clienteSocket.getInputStream());
+            operacion = (Operacion) ois.readObject();
+            System.out.println(operacion.toString());
+            ois.close();
+            oos.flush();
+            oos.close();
+            registrarHistorial(operacion.getOpe() + "", operacion.getNum1(), operacion.getNum2(), operacion.getRes());
+            return operacion.getRes() + "";
+        } catch (IOException e) {
+            return "Error de Conexion";
+        } catch (ClassNotFoundException ex) {
+            return "Error de tipo de dato";
+        }
+
+    }
+    
+    public String MULTIPLICAR(String num1, String num2) {
+        Operacion operacion = new Operacion(Double.parseDouble(num1), Double.parseDouble(num2), '*', "");
+        Socket clienteSocket = null;
+        ObjectOutputStream oos = null;
+        ObjectInputStream ois = null;
+        // Utilizamos un try and catch para manejar excepciones al utilizar sockets
+        try {
+            clienteSocket = new Socket(HOST, PUERTO_BASICAS);
+            oos = new ObjectOutputStream(clienteSocket.getOutputStream());
+            oos.writeObject(operacion);
+            ois = new ObjectInputStream(clienteSocket.getInputStream());
+            operacion = (Operacion) ois.readObject();
+            System.out.println(operacion.toString());
+            ois.close();
+            oos.flush();
+            oos.close();
+            registrarHistorial(operacion.getOpe() + "", operacion.getNum1(), operacion.getNum2(), operacion.getRes());
+            return operacion.getRes() + "";
+        } catch (IOException e) {
+            return "Error de Conexion";
+        } catch (ClassNotFoundException ex) {
+            return "Error de tipo de dato";
+        }
+
+    }
+    
+    public String modular(String num1, String num2) {
+        Operacion operacion = new Operacion(Double.parseDouble(num1), Double.parseDouble(num2), '%', "");
+        Socket clienteSocket = null;
+        ObjectOutputStream oos = null;
+        ObjectInputStream ois = null;
+        // Utilizamos un try and catch para manejar excepciones al utilizar sockets
+        try {
+            clienteSocket = new Socket(HOST, PUERTO_DIVISION);
+            oos = new ObjectOutputStream(clienteSocket.getOutputStream());
+            oos.writeObject(operacion);
+            ois = new ObjectInputStream(clienteSocket.getInputStream());
+            operacion = (Operacion) ois.readObject();
+            System.out.println(operacion.toString());
+            ois.close();
+            oos.flush();
+            oos.close();
+            registrarHistorial(operacion.getOpe() + "", operacion.getNum1(), operacion.getNum2(), operacion.getRes());
+            return operacion.getRes() + "";
+        } catch (IOException e) {
+            return "Error de Conexion";
+        } catch (ClassNotFoundException ex) {
+            return "Error de tipo de dato";
+        }
+
+    }
+    
+    public String raiz(String num1, String num2) {
+        Operacion operacion = new Operacion(Double.parseDouble(num1), Double.parseDouble(num2), '√', "");
+        Socket clienteSocket = null;
+        ObjectOutputStream oos = null;
+        ObjectInputStream ois = null;
+        // Utilizamos un try and catch para manejar excepciones al utilizar sockets
+        try {
+            clienteSocket = new Socket(HOST, PUERTO_POTENCIA);
+            oos = new ObjectOutputStream(clienteSocket.getOutputStream());
+            oos.writeObject(operacion);
+            ois = new ObjectInputStream(clienteSocket.getInputStream());
+            operacion = (Operacion) ois.readObject();
+            System.out.println(operacion.toString());
+            ois.close();
+            oos.flush();
+            oos.close();
+            registrarHistorial(operacion.getOpe() + "", operacion.getNum1(), operacion.getNum2(), operacion.getRes());
+            return operacion.getRes() + "";
+        } catch (IOException e) {
+            return "Error de Conexion";
+        } catch (ClassNotFoundException ex) {
+            return "Error de tipo de dato";
+        }
+
+    }
 }
