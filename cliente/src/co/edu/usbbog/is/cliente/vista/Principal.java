@@ -21,6 +21,7 @@ public class Principal extends JFrame {
     private Registro registro;
     private Operar operar;
     
+    
 
     //componentes
 
@@ -143,6 +144,7 @@ public class Principal extends JFrame {
         login = new Login(this);
         ventana = new Ventana(this, login, "Ventana", false, false, DO_NOTHING_ON_CLOSE);
     }
+    
     //metodos de logica
     /**
      * Metodo para validar el inicio de sesion de un usuario

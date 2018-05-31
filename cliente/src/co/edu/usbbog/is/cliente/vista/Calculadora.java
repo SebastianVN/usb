@@ -60,6 +60,7 @@ public class Calculadora extends javax.swing.JPanel {
         jLabelUsuario = new javax.swing.JLabel();
         jLabelHora = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
+        jButtonHistorial = new javax.swing.JButton();
 
         jButton19.setText("+");
 
@@ -252,6 +253,13 @@ public class Calculadora extends javax.swing.JPanel {
                 }
             });
 
+            jButtonHistorial.setText("Historial");
+            jButtonHistorial.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    jButtonHistorialActionPerformed(evt);
+                }
+            });
+
             javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
             this.setLayout(layout);
             layout.setHorizontalGroup(
@@ -276,7 +284,7 @@ public class Calculadora extends javax.swing.JPanel {
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(jButton9)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jButtonPotencia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(jButtonPotencia, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE))
                                 .addGroup(layout.createSequentialGroup()
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                         .addComponent(jButtonPunto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -312,9 +320,11 @@ public class Calculadora extends javax.swing.JPanel {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabelHora, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(jButtonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonHistorial)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jButtonLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jButtonSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jButtonLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGap(8, 8, 8))
             );
             layout.setVerticalGroup(
@@ -349,7 +359,6 @@ public class Calculadora extends javax.swing.JPanel {
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(jButtonMultiplicacion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addGap(1, 1, 1)))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jButtonPunto)
                                 .addComponent(jButton0)
@@ -359,7 +368,8 @@ public class Calculadora extends javax.swing.JPanel {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jButtonSalir)
-                                .addComponent(jButtonLogout)))
+                                .addComponent(jButtonLogout)
+                                .addComponent(jButtonHistorial)))
                         .addGroup(layout.createSequentialGroup()
                             .addGap(55, 55, 55)
                             .addComponent(jButtonLimpiar)
@@ -550,6 +560,11 @@ public class Calculadora extends javax.swing.JPanel {
         System.out.println("Igual (=)");
     }//GEN-LAST:event_jButtonIgualActionPerformed
 
+    private void jButtonHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHistorialActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_jButtonHistorialActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton0;
@@ -565,6 +580,7 @@ public class Calculadora extends javax.swing.JPanel {
     private javax.swing.JButton jButton9;
     private javax.swing.JButton jButtonBorrar;
     private javax.swing.JButton jButtonDivision;
+    private javax.swing.JButton jButtonHistorial;
     private javax.swing.JButton jButtonIgual;
     private javax.swing.JButton jButtonLimpiar;
     private javax.swing.JButton jButtonLogout;
