@@ -5,8 +5,9 @@
  */
 package co.edu.usbbog.is.cliente.vista;
 
-import co.edu.usbbog.is.cliente.controlador.jpa.UsuarioJpaController;
+import co.edu.usbbog.is.cliente.modelo.entidades.Historial;
 import co.edu.usbbog.is.cliente.controlador.logica.Operar;
+import java.util.List;
 import javax.swing.JFrame;
 
 /**
@@ -21,7 +22,7 @@ public class Principal extends JFrame {
     private Calculadora calculadora;
     private Registro registro;
     private Operar operar;
-    private Historial historial;
+    private VerHistorial verHistorial;
     String UserLogin;
     
     
@@ -80,9 +81,9 @@ public class Principal extends JFrame {
             remove(registro);
             registro=null;
         }
-        if(historial!=null){
-            remove(historial);
-            historial=null;
+        if(verHistorial!=null){
+            remove(verHistorial);
+            verHistorial=null;
         }
         //hacer lo anterior parra cada panel que este en el marco
         
@@ -173,9 +174,9 @@ public class Principal extends JFrame {
     protected void irAHistorial() {
         iniciarMarco();
         //agrega el panelinicial
-        historial = new Historial(this);
-        historial.setVisible(true);
-        add(historial);
+        verHistorial = new VerHistorial(this);
+        verHistorial.setVisible(true);
+        add(verHistorial);
         //se ajusta el frame
         pack();
         //centra la aplicacion 
@@ -212,9 +213,8 @@ public class Principal extends JFrame {
         
     }
     
-    public int Obtener(){
-        
-        return operar.ObtenerUs();
+    public List<Historial> obtenerHistorial(){
+        return operar.obtenerHistorialDeUsuario();
     }
 
 

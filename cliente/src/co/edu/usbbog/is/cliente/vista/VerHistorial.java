@@ -5,9 +5,7 @@
  */
 package co.edu.usbbog.is.cliente.vista;
 
-import co.edu.usbbog.is.cliente.controlador.jpa.HistorialJpaController;
-import co.edu.usbbog.is.cliente.controlador.jpa.UsuarioJpaController;
-import co.edu.usbbog.is.cliente.modelo.entidades.Usuario;
+import co.edu.usbbog.is.cliente.modelo.entidades.Historial;
 import java.util.List;
 import javax.persistence.Persistence;
 import javax.swing.JOptionPane;
@@ -17,25 +15,25 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author jofa7
  */
-public class Historial extends javax.swing.JPanel {
+public class VerHistorial extends javax.swing.JPanel {
+
     private Principal p;
-    HistorialJpaController hjc = new HistorialJpaController(Persistence.createEntityManagerFactory("clientePU"));
-     
+
     /**
      * Creates new form Calculadora
      */
-    public Historial(Principal p) {
-        this.p=p;
+    public VerHistorial(Principal p) {
+        this.p = p;
         initComponents();
-        CrearModelo2();
-        Cargar_Informacion();
+        crearTabla();
+        cargarTabla();
     }
-    
-    DefaultTableModel modelo2;
 
-    private void CrearModelo2() {
+    DefaultTableModel dataModel;
+
+    private void crearTabla() {
         try {
-            modelo2 = (new DefaultTableModel(
+            dataModel = (new DefaultTableModel(
                     null, new String[]{
                         "Operacion", "Numero 1",
                         "Numero 2", "Resultado"}) {
@@ -59,40 +57,38 @@ public class Historial extends javax.swing.JPanel {
                     return canEdit[colIndex];
                 }
             });
-            tabla.setModel(modelo2);
+            tabla.setModel(dataModel);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.toString() + "error2");
         }
- }
+    }
+
     //*
-    //Este Metodo traera la informacion de la tabla Historial
-    public void Cargar_Informacion(){
-     
-        try{
-            Object o[]=null;
-            List<co.edu.usbbog.is.cliente.modelo.entidades.Historial> ListH= hjc.findHistorialEntities();
-            int user =p.Obtener();
-            System.out.println("Este es el valor: "+user);
-            for(int i=0;i<ListH.size() ;i++){
-                
-                
-                System.out.println("Valor del Historial:   "+ListH.get(i).getUs());
-                
-                modelo2.addRow(o);
-                modelo2.setValueAt(ListH.get(i).getOperacion(), i, 0);
-                modelo2.setValueAt(ListH.get(i).getNum1(), i, 1);
-                modelo2.setValueAt(ListH.get(i).getNum2(), i, 2);
-                modelo2.setValueAt(ListH.get(i).getRes(), i, 3);
-                
+    //Este Metodo traera la informacion de la tabla VerHistorial
+    public void cargarTabla() {
+
+        try {
+            Object o[] = null;
+            List<Historial> historial = p.obtenerHistorial();
+
+            for (int i = 0; i < historial.size(); i++) {
+
+                System.out.println("Valor del Historial:   " + historial.get(i).getUs());
+
+                dataModel.addRow(o);
+                dataModel.setValueAt(historial.get(i).getOperacion(), i, 0);
+                dataModel.setValueAt(historial.get(i).getNum1(), i, 1);
+                dataModel.setValueAt(historial.get(i).getNum2(), i, 2);
+                dataModel.setValueAt(historial.get(i).getRes(), i, 3);
+
             }
-            
-        }catch(Exception e){
-        JOptionPane.showMessageDialog(null,e.getMessage());
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+
     }
-        
-    }
-    
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -184,8 +180,9 @@ public class Historial extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
     /**
-     * Void jButton encargado de Regresar del panel historial al panel calculadora (.)
-     */ 
+     * Void jButton encargado de Regresar del panel historial al panel
+     * calculadora (.)
+     */
     private void jButtonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegresarActionPerformed
         // TODO add your handling code here:
         p.VolverACalculadora();

@@ -142,13 +142,8 @@ public class Operar {
 
     }
     
-    public int ObtenerUs(){
-        
-        int x = currentUser.getId();
-        System.out.println(""+x);
-        
-       return currentUser.getId();
-       
+    public List<Historial> obtenerHistorialDeUsuario(){        
+       return currentUser.getHistorialList();       
     }
 
     
