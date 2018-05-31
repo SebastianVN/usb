@@ -139,9 +139,8 @@ public class HistorialJpaController implements Serializable {
         EntityManager em = getEntityManager();
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
+            cq.select(cq.from(Historial.class));
             Query q = em.createQuery(cq);
-          
-            
             if (!all) {
                 q.setMaxResults(maxResults);
                 q.setFirstResult(firstResult);

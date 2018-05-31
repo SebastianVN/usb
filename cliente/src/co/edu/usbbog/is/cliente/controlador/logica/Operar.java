@@ -145,7 +145,4 @@ public class Operar {
     public List<Historial> obtenerHistorialDeUsuario(){        
        return currentUser.getHistorialList();       
     }
-
-    
-
 }

@@ -71,7 +71,7 @@ public class OperarTest {
     @Test
     public void testOperacion() {
         System.out.println("operacion");
-        String ecuacion = "a + c =";
+        String ecuacion = "1000 + 3 =";
         Operar instance = new Operar();
         String expResult = "1003.0";
         String result = instance.operacion(ecuacion);
