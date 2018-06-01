@@ -38,7 +38,7 @@ public class Pantalla_inicial_paciente extends javax.swing.JPanel {
         jButton3 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jButtonForoPaciente = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
+        jButtonRutasAtencion = new javax.swing.JButton();
         jButtonPuntoPaciente = new javax.swing.JButton();
 
         jButton1.setBackground(new java.awt.Color(0, 208, 255));
@@ -100,9 +100,14 @@ public class Pantalla_inicial_paciente extends javax.swing.JPanel {
             }
         });
 
-        jButton8.setBackground(new java.awt.Color(0, 208, 255));
-        jButton8.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jButton8.setText("Rutas de atención");
+        jButtonRutasAtencion.setBackground(new java.awt.Color(0, 208, 255));
+        jButtonRutasAtencion.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jButtonRutasAtencion.setText("Rutas de atención");
+        jButtonRutasAtencion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRutasAtencionActionPerformed(evt);
+            }
+        });
 
         jButtonPuntoPaciente.setBackground(new java.awt.Color(0, 208, 255));
         jButtonPuntoPaciente.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -132,7 +137,7 @@ public class Pantalla_inicial_paciente extends javax.swing.JPanel {
                             .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButtonForoPaciente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButtonRutasAtencion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButtonPuntoPaciente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -166,7 +171,7 @@ public class Pantalla_inicial_paciente extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(jButtonForoPaciente)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton8)
+                        .addComponent(jButtonRutasAtencion)
                         .addGap(18, 18, 18)
                         .addComponent(jButtonPuntoPaciente))
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -176,6 +181,7 @@ public class Pantalla_inicial_paciente extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        p.IrAServicioPaciente();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButtonVerPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerPerfilActionPerformed
@@ -202,14 +208,19 @@ public class Pantalla_inicial_paciente extends javax.swing.JPanel {
         p.irAInicioDeSesion();
     }//GEN-LAST:event_jButtonCerrarSesionActionPerformed
 
+    private void jButtonRutasAtencionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRutasAtencionActionPerformed
+        // TODO add your handling code here:
+        p.IrARutasAtencion();
+    }//GEN-LAST:event_jButtonRutasAtencionActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton8;
     private javax.swing.JButton jButtonCerrarSesion;
     private javax.swing.JButton jButtonForoPaciente;
     private javax.swing.JButton jButtonPuntoPaciente;
+    private javax.swing.JButton jButtonRutasAtencion;
     private javax.swing.JButton jButtonVerPerfil;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

@@ -52,7 +52,7 @@ private Principal p;
         jLabel1 = new javax.swing.JLabel();
         jButtonHistorial = new javax.swing.JButton();
         jButtonForoPaciente = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
+        jButtonRutasAtencion = new javax.swing.JButton();
         jButtonPuntoPaciente = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
@@ -253,9 +253,14 @@ private Principal p;
             }
         });
 
-        jButton8.setBackground(new java.awt.Color(0, 208, 255));
-        jButton8.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jButton8.setText("Rutas de atención");
+        jButtonRutasAtencion.setBackground(new java.awt.Color(0, 208, 255));
+        jButtonRutasAtencion.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jButtonRutasAtencion.setText("Rutas de atención");
+        jButtonRutasAtencion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRutasAtencionActionPerformed(evt);
+            }
+        });
 
         jButtonPuntoPaciente.setBackground(new java.awt.Color(0, 208, 255));
         jButtonPuntoPaciente.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -396,14 +401,13 @@ private Principal p;
                                     .addComponent(jButtonHistorial, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jButtonForoPaciente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButtonRutasAtencion, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jButtonPuntoPaciente, javax.swing.GroupLayout.Alignment.LEADING))
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jButton2)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(jButton4)))
                         .addGap(17, 17, 17)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
@@ -430,7 +434,7 @@ private Principal p;
                         .addGap(18, 18, 18)
                         .addComponent(jButtonForoPaciente)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton8)
+                        .addComponent(jButtonRutasAtencion)
                         .addGap(18, 18, 18)
                         .addComponent(jButtonPuntoPaciente)
                         .addGap(27, 27, 27)
@@ -469,6 +473,7 @@ private Principal p;
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        p.IrAServicioPaciente();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButtonCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCerrarSesionActionPerformed
@@ -487,30 +492,27 @@ private Principal p;
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField13ActionPerformed
 
+    private void jButtonRutasAtencionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRutasAtencionActionPerformed
+        // TODO add your handling code here:
+        p.IrARutasAtencion();
+    }//GEN-LAST:event_jButtonRutasAtencionActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton8;
     private javax.swing.JButton jButtonCerrarSesion;
     private javax.swing.JButton jButtonForoPaciente;
     private javax.swing.JButton jButtonHistorial;
     private javax.swing.JButton jButtonPuntoPaciente;
+    private javax.swing.JButton jButtonRutasAtencion;
     private javax.swing.JButton jButtonVerPerfil;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
@@ -522,24 +524,15 @@ private Principal p;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextArea jTextArea3;
-    private javax.swing.JTextArea jTextArea4;
     private javax.swing.JTextArea jTextArea5;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
     private javax.swing.JTextField jTextField14;
     private javax.swing.JTextField jTextField15;
@@ -548,8 +541,5 @@ private Principal p;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
 }
