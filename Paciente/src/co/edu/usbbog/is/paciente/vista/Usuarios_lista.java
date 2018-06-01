@@ -13,6 +13,7 @@ public class Usuarios_lista extends javax.swing.JPanel {
     private Principal p;
     /**
      * Creates new form Usuarios_lista
+     * 
      */
     public Usuarios_lista(Principal p) {
         this.p = p;

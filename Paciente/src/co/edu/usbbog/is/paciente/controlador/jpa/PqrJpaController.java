@@ -7,14 +7,13 @@ package co.edu.usbbog.is.paciente.controlador.jpa;
 
 import co.edu.usbbog.is.paciente.controlador.jpa.exceptions.NonexistentEntityException;
 import co.edu.usbbog.is.paciente.controlador.jpa.exceptions.PreexistingEntityException;
-import co.edu.usbbog.is.paciente.modelo.Usuario;
+import co.edu.usbbog.is.paciente.modelo.Pqr;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
-import javax.persistence.NoResultException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
@@ -22,9 +21,9 @@ import javax.persistence.criteria.Root;
  *
  * @author Sebastian
  */
-public class UsuarioJpaController implements Serializable {
+public class PqrJpaController implements Serializable {
 
-    public UsuarioJpaController(EntityManagerFactory emf) {
+    public PqrJpaController(EntityManagerFactory emf) {
         this.emf = emf;
     }
     private EntityManagerFactory emf = null;
@@ -33,16 +32,16 @@ public class UsuarioJpaController implements Serializable {
         return emf.createEntityManager();
     }
 
-    public void create(Usuario usuario) throws PreexistingEntityException, Exception {
+    public void create(Pqr pqr) throws PreexistingEntityException, Exception {
         EntityManager em = null;
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            em.persist(usuario);
+            em.persist(pqr);
             em.getTransaction().commit();
         } catch (Exception ex) {
-            if (findUsuario(usuario.getCedula()) != null) {
-                throw new PreexistingEntityException("Usuario " + usuario + " already exists.", ex);
+            if (findPqr(pqr.getCodigoPqr()) != null) {
+                throw new PreexistingEntityException("Pqr " + pqr + " already exists.", ex);
             }
             throw ex;
         } finally {
@@ -52,19 +51,19 @@ public class UsuarioJpaController implements Serializable {
         }
     }
 
-    public void edit(Usuario usuario) throws NonexistentEntityException, Exception {
+    public void edit(Pqr pqr) throws NonexistentEntityException, Exception {
         EntityManager em = null;
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            usuario = em.merge(usuario);
+            pqr = em.merge(pqr);
             em.getTransaction().commit();
         } catch (Exception ex) {
             String msg = ex.getLocalizedMessage();
             if (msg == null || msg.length() == 0) {
-                Integer id = usuario.getCedula();
-                if (findUsuario(id) == null) {
-                    throw new NonexistentEntityException("The usuario with id " + id + " no longer exists.");
+                Integer id = pqr.getCodigoPqr();
+                if (findPqr(id) == null) {
+                    throw new NonexistentEntityException("The pqr with id " + id + " no longer exists.");
                 }
             }
             throw ex;
@@ -80,14 +79,14 @@ public class UsuarioJpaController implements Serializable {
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            Usuario usuario;
+            Pqr pqr;
             try {
-                usuario = em.getReference(Usuario.class, id);
-                usuario.getCedula();
+                pqr = em.getReference(Pqr.class, id);
+                pqr.getCodigoPqr();
             } catch (EntityNotFoundException enfe) {
-                throw new NonexistentEntityException("The usuario with id " + id + " no longer exists.", enfe);
+                throw new NonexistentEntityException("The pqr with id " + id + " no longer exists.", enfe);
             }
-            em.remove(usuario);
+            em.remove(pqr);
             em.getTransaction().commit();
         } finally {
             if (em != null) {
@@ -96,19 +95,19 @@ public class UsuarioJpaController implements Serializable {
         }
     }
 
-    public List<Usuario> findUsuarioEntities() {
-        return findUsuarioEntities(true, -1, -1);
+    public List<Pqr> findPqrEntities() {
+        return findPqrEntities(true, -1, -1);
     }
 
-    public List<Usuario> findUsuarioEntities(int maxResults, int firstResult) {
-        return findUsuarioEntities(false, maxResults, firstResult);
+    public List<Pqr> findPqrEntities(int maxResults, int firstResult) {
+        return findPqrEntities(false, maxResults, firstResult);
     }
 
-    private List<Usuario> findUsuarioEntities(boolean all, int maxResults, int firstResult) {
+    private List<Pqr> findPqrEntities(boolean all, int maxResults, int firstResult) {
         EntityManager em = getEntityManager();
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-            cq.select(cq.from(Usuario.class));
+            cq.select(cq.from(Pqr.class));
             Query q = em.createQuery(cq);
             if (!all) {
                 q.setMaxResults(maxResults);
@@ -120,42 +119,23 @@ public class UsuarioJpaController implements Serializable {
         }
     }
 
-    public Usuario findUsuario(Integer id) {
+    public Pqr findPqr(Integer id) {
         EntityManager em = getEntityManager();
         try {
-            return em.find(Usuario.class, id);
+            return em.find(Pqr.class, id);
         } finally {
             em.close();
         }
     }
 
-    public int getUsuarioCount() {
+    public int getPqrCount() {
         EntityManager em = getEntityManager();
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-            Root<Usuario> rt = cq.from(Usuario.class);
+            Root<Pqr> rt = cq.from(Pqr.class);
             cq.select(em.getCriteriaBuilder().count(rt));
             Query q = em.createQuery(cq);
             return ((Long) q.getSingleResult()).intValue();
-        } finally {
-            em.close();
-        }
-    }
-    /**
-     * Metodo para busccar un usuario por nombre
-     * @param user recibimos un nombre de usuario
-     * @return un objeto de tipo usuario
-     */
-    public Usuario findUsuarioByLogin(String user) {
-        EntityManager em = getEntityManager();
-        try {
-            Query q = em.createNativeQuery("SELECT * FROM usuario WHERE nombres = \'"+ user+"\';", Usuario.class);
-            try {
-                Usuario u = (Usuario) q.getSingleResult();
-                return u;
-            } catch (NoResultException e) {
-                return null;
-            }            
         } finally {
             em.close();
         }
