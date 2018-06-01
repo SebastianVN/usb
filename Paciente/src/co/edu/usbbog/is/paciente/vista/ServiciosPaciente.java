@@ -5,6 +5,8 @@
  */
 package co.edu.usbbog.is.paciente.vista;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author jofa7
@@ -259,6 +261,7 @@ public class ServiciosPaciente extends javax.swing.JPanel {
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        JOptionPane.showMessageDialog(null,"Cerrando Sesión...");
         p.irAInicioDeSesion();
     }//GEN-LAST:event_jButton4ActionPerformed
 

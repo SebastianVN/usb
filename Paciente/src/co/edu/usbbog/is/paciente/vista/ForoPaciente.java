@@ -5,6 +5,8 @@
  */
 package co.edu.usbbog.is.paciente.vista;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author jofa7
@@ -483,6 +485,7 @@ private Principal p;
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButtonCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCerrarSesionActionPerformed
+        JOptionPane.showMessageDialog(null,"Cerrando Sesión...");
         p.irAInicioDeSesion();
     }//GEN-LAST:event_jButtonCerrarSesionActionPerformed
 

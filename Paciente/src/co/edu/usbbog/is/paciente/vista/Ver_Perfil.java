@@ -5,6 +5,8 @@
  */
 package co.edu.usbbog.is.paciente.vista;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author jofa7
@@ -288,6 +290,7 @@ public class Ver_Perfil extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCerrarSesionActionPerformed
+        JOptionPane.showMessageDialog(null,"Cerrando Sesión...");
         p.irAInicioDeSesion();
     }//GEN-LAST:event_jButtonCerrarSesionActionPerformed
 

@@ -5,6 +5,8 @@
  */
 package co.edu.usbbog.is.paciente.vista;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Sebastian
@@ -205,6 +207,7 @@ public class Pantalla_inicial_paciente extends javax.swing.JPanel {
     }//GEN-LAST:event_jButtonForoPacienteActionPerformed
 
     private void jButtonCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCerrarSesionActionPerformed
+        JOptionPane.showMessageDialog(null,"Cerrando Sesión...");
         p.irAInicioDeSesion();
     }//GEN-LAST:event_jButtonCerrarSesionActionPerformed
 
