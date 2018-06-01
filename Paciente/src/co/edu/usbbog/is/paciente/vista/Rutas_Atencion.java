@@ -154,7 +154,6 @@ public class Rutas_Atencion extends javax.swing.JPanel {
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jTextArea1.setText("Lunes - Martes : 8:00 A.m - 5:00 P.m\nSabados : \t10:00 A.m - 3:00 P.m\nDomingos y festivos NO hay servicio.");
-        jTextArea1.setEnabled(false);
         jScrollPane1.setViewportView(jTextArea1);
 
         jLabel8.setText("Nombre:");
@@ -183,7 +182,6 @@ public class Rutas_Atencion extends javax.swing.JPanel {
         jTextArea3.setColumns(20);
         jTextArea3.setRows(5);
         jTextArea3.setText("Lunes - Martes : 8:00 A.m - 5:00 P.m\nSabados : \t10:00 A.m - 3:00 P.m\nDomingos y festivos NO hay servicio.");
-        jTextArea3.setEnabled(false);
         jScrollPane3.setViewportView(jTextArea3);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

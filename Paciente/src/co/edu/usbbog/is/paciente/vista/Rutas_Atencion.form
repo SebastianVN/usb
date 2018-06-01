@@ -353,7 +353,6 @@
                 <Property name="columns" type="int" value="20"/>
                 <Property name="rows" type="int" value="5"/>
                 <Property name="text" type="java.lang.String" value="Lunes - Martes : 8:00 A.m - 5:00 P.m&#xa;Sabados : &#x9;10:00 A.m - 3:00 P.m&#xa;Domingos y festivos NO hay servicio."/>
-                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -406,7 +405,6 @@
                 <Property name="columns" type="int" value="20"/>
                 <Property name="rows" type="int" value="5"/>
                 <Property name="text" type="java.lang.String" value="Lunes - Martes : 8:00 A.m - 5:00 P.m&#xa;Sabados : &#x9;10:00 A.m - 3:00 P.m&#xa;Domingos y festivos NO hay servicio."/>
-                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
             </Component>
           </SubComponents>

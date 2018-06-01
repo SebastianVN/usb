@@ -450,12 +450,18 @@ private Principal p;
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
     }// </editor-fold>//GEN-END:initComponents
-
+    /**
+     * El botón VerPerfil se encarga de cambiar el panel al panel si 
+     * @param evt Se encarga de generar la accion del botón mediante pulsacion
+     */
     private void jButtonVerPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerPerfilActionPerformed
         // TODO add your handling code here:
         p.IrAVerPerfil();
     }//GEN-LAST:event_jButtonVerPerfilActionPerformed
-
+    /**
+     * 
+     * @param evt 
+     */
     private void jButtonHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHistorialActionPerformed
         // TODO add your handling code here:
         p.IrAHistorial();
