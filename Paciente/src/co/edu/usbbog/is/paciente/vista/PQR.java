@@ -12,6 +12,9 @@ import javax.swing.JOptionPane;
  * @author Sebastian
  */
 public class PQR extends javax.swing.JPanel {
+    /**
+     * Variable para traer la clase Principal
+     */
     private Principal p;
     /**
      * Creates new form PQR
@@ -242,40 +245,64 @@ public class PQR extends javax.swing.JPanel {
                         .addComponent(jButton10))))
         );
     }// </editor-fold>//GEN-END:initComponents
-
+    /**
+     * Metodo para ir al panel de los servicios
+     * @param evt Muestra evento conforme una accion
+     */
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         p.IrAServicios();
     }//GEN-LAST:event_jButton3ActionPerformed
-
+    /**
+     * Metodo para ir al panel de los usuarios
+     * @param evt Muestra evento conforme una accion
+     */
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         p.irAUsuarios();
     }//GEN-LAST:event_jButton8ActionPerformed
-
+    /**
+     * Metodo para ir al panel de punto de atencion
+     * @param evt Muestra evento conforme una accion
+     */
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
        p.IrAPunto();
     }//GEN-LAST:event_jButton6ActionPerformed
-
+    /**
+     * Metodo para ir al panel de eps
+     * @param evt Muestra evento conforme una accion
+     */
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
        p.IrAEps();
     }//GEN-LAST:event_jButton5ActionPerformed
-
+    /**
+     * Metodo para ir al panel de reportes
+     * @param evt Muestra evento conforme una accion
+     */
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         p.IrAReportes();
     }//GEN-LAST:event_jButton7ActionPerformed
-
+    /**
+     * Metodo para ir al inicio de sesion 
+     * @param evt Muestra evento conforme una accion
+     */
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         JOptionPane.showMessageDialog(null,"Cerrando Sesión...");
         p.irAInicioDeSesion();
     }//GEN-LAST:event_jButton4ActionPerformed
-
+    /**
+     * Metodo para ir al foro 
+     * @param evt 
+     */
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         p.IrAForo();
     }//GEN-LAST:event_jButton11ActionPerformed
-
+    
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
        
     }//GEN-LAST:event_jButton9ActionPerformed
-
+    /**
+     * Metodo para ir al dashborad
+     * @param evt Muestra evento conforme una accion
+     */
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         p.IrADashBoard();
     }//GEN-LAST:event_jButton10ActionPerformed

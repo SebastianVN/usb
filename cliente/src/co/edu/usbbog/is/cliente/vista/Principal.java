@@ -217,5 +217,7 @@ public class Principal extends JFrame {
         return operar.obtenerHistorialDeUsuario();
     }
 
-
+    String calcular(String ecuacion) {
+        return "";
+    }
 }

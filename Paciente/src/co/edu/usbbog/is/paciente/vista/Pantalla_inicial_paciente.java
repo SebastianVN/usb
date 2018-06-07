@@ -12,10 +12,12 @@ import javax.swing.JOptionPane;
  * @author Sebastian
  */
 public class Pantalla_inicial_paciente extends javax.swing.JPanel {
-    
+    /**
+     * Variable que me trae la clase Principal
+     */
     private Principal p;
     /**
-     * Creates new form Pantalla_inicial_paciente
+     * Crea un nuevo formato de Pantalla_inicial_paciente
      */
     public Pantalla_inicial_paciente(Principal p) {
         this.p = p;
@@ -180,37 +182,58 @@ public class Pantalla_inicial_paciente extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
+    /**
+     * 
+     * @param evt 
+     */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         p.IrAServicioPaciente();
     }//GEN-LAST:event_jButton1ActionPerformed
-
+    /**
+     * 
+     * @param evt 
+     */
     private void jButtonVerPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerPerfilActionPerformed
         // TODO add your handling code here:
         p.IrAVerPerfil();
     }//GEN-LAST:event_jButtonVerPerfilActionPerformed
-
+    /**
+     * 
+     * @param evt 
+     */
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         p.IrAHistorial();
     }//GEN-LAST:event_jButton3ActionPerformed
-
+    /**
+     * 
+     * @param evt 
+     */
     private void jButtonPuntoPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPuntoPacienteActionPerformed
         // TODO add your handling code here:
         p.IrAPuntoPaciente();
     }//GEN-LAST:event_jButtonPuntoPacienteActionPerformed
-
+    /**
+     * 
+     * @param evt 
+     */
     private void jButtonForoPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonForoPacienteActionPerformed
         // TODO add your handling code here:
         p.IrAForoPaciente();
     }//GEN-LAST:event_jButtonForoPacienteActionPerformed
-
+    /**
+     * 
+     * @param evt 
+     */
     private void jButtonCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCerrarSesionActionPerformed
         JOptionPane.showMessageDialog(null,"Cerrando Sesión...");
         p.irAInicioDeSesion();
     }//GEN-LAST:event_jButtonCerrarSesionActionPerformed
-
+    /**
+     * 
+     * @param evt 
+     */
     private void jButtonRutasAtencionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRutasAtencionActionPerformed
         // TODO add your handling code here:
         p.IrARutasAtencion();

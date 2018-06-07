@@ -15,42 +15,33 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.persistence.Persistence;
+import javax.swing.JOptionPane;
 
 /**
+ * Clase de logica e interaccion con la base de datos
  *
- * @author 204
+ * @author Sebastian
  */
 public class Operar {
-
-    /**
-     * Variable que me guarda el puerto que se va a utilizar como puente entre
-     * servidor y cliente para la operaciones basicas
-     */
-    public final static int PUERTO_BASICAS = 9990;
-    /**
-     * Variable que me guarda el puerto que se va a utilizar como puente entre
-     * servidor y cliente para las operaciones de potencia
-     */
-    public final static int PUERTO_POTENCIA = 9992;
-    /**
-     * Variable que me guarda el puerto que se va a utilizar como puente entre
-     * servidor y cliente para las operaciones de division
-     */
-    public final static int PUERTO_DIVISION = 9991;
-
-    /**
-     * Variable que me guarda la dirección ip que se va a utilizar como puente
-     * entre servidor y cliente
-     */
-    public final static String HOST = "127.0.0.1";
 
     /**
      * Metodo principal que envia un objeto al servidor que es una operacion
      *
      * @param args
      */
+    /**
+     * Variable que guarda la sesion activa de un usuario
+     */
     private Usuario currentUser;
 
+    /**
+     * Metodod para realizar la autenticacion al iniciar sesion con la base de
+     * datos
+     *
+     * @param user nombre del usuario
+     * @param pass contraseña del usuario
+     * @return si el usuario existe en la base de datos
+     */
     public boolean iniciarSesion(String user, String pass) {
         UsuarioJpaController ujc = new UsuarioJpaController(Persistence.createEntityManagerFactory("PacientePU"));
         Usuario u = ujc.findUsuarioByLogin(user);
@@ -62,60 +53,50 @@ public class Operar {
                 currentUser = null;
                 return false;
             }
-        } else {   
+        } else {
             currentUser = null;
             return false;
         }
     }
-    
-    public void cerrarSesion(){
-        currentUser= null;
+    /**
+     * Metodod que cierra la sesion del usuario actual
+     */
+    public void cerrarSesion() {
+        currentUser = null;
     }
-    /**public String operacion(String ecuacion){
-        String ecu[]=ecuacion.split(" ");
-        switch(ecu[1]){
-            case "+":
-                return sumar(ecu[0],ecu[2]);
-                
-        }
-        return "hola";
-    }
-    public String sumar(String num1, String num2) {
-        Operacion operacion = new Operacion(Double.parseDouble(num1), Double.parseDouble(num2), '+', "");
-        Socket clienteSocket = null;
-        ObjectOutputStream oos = null;
-        ObjectInputStream ois = null;
-        // Utilizamos un try and catch para manejar excepciones al utilizar sockets
+    /**
+     * Metodo para registrar un Usuario en la base de datos
+     * @param nombre nombre del nuevo usuario
+     * @param apellido apellido del nuevo usuario
+     * @param cedula numero de identificacion del usuario
+     * @param email correo electronico del nuevo usuario
+     * @param rol rol del usuario en la plataforma
+     * @param telefono numero telefonico del nuevo usuario
+     * @param direccion direccion del nuevo usuario
+     * @param eps eps con la que el nuevo usuario esta ligado
+     * @param pass contraseña del nuevo usuario
+     * @param confirPass confirmacion de su contraseña
+     * @return confirma si se creo el nuevo usuario o no se creo
+     */
+    public boolean Registrar(String nombre, String apellido, String cedula, String email, String rol, String telefono, String direccion, String eps, String pass, String confirPass) {
+
+        UsuarioJpaController ujc = new UsuarioJpaController(Persistence.createEntityManagerFactory("PacientePU"));
+        Usuario u = new Usuario();
         try {
-            clienteSocket = new Socket(HOST, PUERTO_BASICAS);
-            oos = new ObjectOutputStream(clienteSocket.getOutputStream());
-            oos.writeObject(operacion);
-            ois = new ObjectInputStream(clienteSocket.getInputStream());
-            operacion = (Operacion) ois.readObject();
-            System.out.println(operacion.toString());
-            ois.close();
-            oos.flush();
-            oos.close();
-            registrarHistorial(operacion.getOpe()+"",operacion.getNum1(),operacion.getNum2(), operacion.getRes());
-            return operacion.getRes() + "";
-        } catch (IOException e) {
-            return "Error de Conexion";
-        } catch (ClassNotFoundException ex) {
-            return "Error de tipo de dato";
+            u.setNombres(nombre);
+            u.setApellidos(apellido);
+            u.setContraseña(pass);
+            u.setCedula(Integer.parseInt(cedula));
+            u.setEmail(email);
+            u.setRole(rol);
+            u.setTelefono(Integer.parseInt(telefono));
+            u.setDireccion(direccion);
+            ujc.create(u);
+            JOptionPane.showMessageDialog(null, "Se Guardaron Los datos");
+            return true;
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "error");
+            return false;
         }
-
     }
-
-    private void registrarHistorial(String op, double num1, double num2, double res) {
-        Historial registro = new Historial();
-        registro.setOperacion(op);
-        registro.setNum1(num1);
-        registro.setNum2(num2);
-        registro.setRes(res);
-        registro.setUs(currentUser);
-        HistorialJpaController hjc = new HistorialJpaController(Persistence.createEntityManagerFactory("clientePU"));
-        hjc.create(registro);
-        
-
-    }*/
 }

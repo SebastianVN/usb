@@ -1,4 +1,4 @@
-/*
+    /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -316,32 +316,50 @@ public class Rutas_Atencion extends javax.swing.JPanel {
                 .addContainerGap(28, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
+    /**
+     * Metodo para ir al foro del paciente
+     * @param evt Muestra evento conforme una accion
+     */
     private void jButtonForoPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonForoPacienteActionPerformed
         // TODO add your handling code here:
         p.IrAForoPaciente();
     }//GEN-LAST:event_jButtonForoPacienteActionPerformed
-
+    /**
+     * Metodo para ir al punto de atencion del paciente
+     * @param evt Muestra evento conforme una accion
+     */
     private void jButtonPuntoPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPuntoPacienteActionPerformed
         // TODO add your handling code here:
         p.IrAPuntoPaciente();
     }//GEN-LAST:event_jButtonPuntoPacienteActionPerformed
-
+    /**
+     * Metodo para ir a solicitar servicio
+     * @param evt Muestra evento conforme una accion
+     */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         p.IrAServicioPaciente();
     }//GEN-LAST:event_jButton1ActionPerformed
-
+    /**
+     * Metodo para ir a ver el perfil
+     * @param evt Muestra evento conforme una accion
+     */
     private void jButtonVerPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerPerfilActionPerformed
         // TODO add your handling code here:
         p.IrAVerPerfil();
     }//GEN-LAST:event_jButtonVerPerfilActionPerformed
-
+    /**
+     * Metodo para ir al historial medico del usuario
+     * @param evt Muestra evento conforme una accion
+     */
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         p.IrAHistorial();
     }//GEN-LAST:event_jButton3ActionPerformed
-
+    /**
+     * Metodo para ir al inicio de sesion
+     * @param evt 
+     */
     private void jButtonCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCerrarSesionActionPerformed
         JOptionPane.showMessageDialog(null,"Cerrando Sesión...");
         p.irAInicioDeSesion();
@@ -354,7 +372,10 @@ public class Rutas_Atencion extends javax.swing.JPanel {
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
-
+    /**
+     * Metodo para ir al panel de rutas de atencion
+     * @param evt 
+     */
     private void jButtonRutasAtencionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRutasAtencionActionPerformed
         // TODO add your handling code here:
         p.IrARutasAtencion();

@@ -14,6 +14,7 @@ import javax.swing.JFrame;
  * @author Jose
  */
 public class Principal extends JFrame {
+
     //relaciones
     //variable ventana
     private Ventana ventana;
@@ -22,7 +23,7 @@ public class Principal extends JFrame {
     //variable p referente a la pantalla inicial del paciente
     private Pantalla_inicial_paciente p;
     //variable Registro
-    private Registro registro;
+    private Registrar registro;
     //variable operar
     private Operar operar;
     //variable pa referente a la pantalla inicial del administrador
@@ -53,10 +54,8 @@ public class Principal extends JFrame {
     private Rutas_Atencion ra;
     //Variable sa referente a la pantalla de servicio del rol paciente
     private ServiciosPaciente sa;
-    
 
     //componentes
-
     /**
      * metodo main
      *
@@ -72,7 +71,7 @@ public class Principal extends JFrame {
     public Principal() {
         operar = new Operar();
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.setTitle("Calculadora");
+        this.setTitle("Odrivers");
         this.setResizable(false);
         this.setVisible(false);
         //inicia caracteristicas del Frame
@@ -84,11 +83,10 @@ public class Principal extends JFrame {
      * y sus eventos.
      */
     private void iniciarComponentesDePrincipal() {
-        
+
     }
 
     //metodos de eventos del menu bar    
-
     //metodos de navegacion
     /**
      * Metodo para salir de la aplicación
@@ -96,102 +94,105 @@ public class Principal extends JFrame {
     protected void salir() {
         System.exit(0);
     }
+
     /**
      * Metodo para quitar el panel actual del marco
      */
     private void quitarPanelesDelMarco() {
         setVisible(false);
         //Quita el panel p
-        if (p!=null) {
+        if (p != null) {
             remove(p);
-            p=null;
+            p = null;
         }
         //Quita el panel registro
-        if (registro!=null) {
+        if (registro != null) {
             remove(registro);
-            registro=null;
+            registro = null;
         }
         //Quita el panel pa
-        if(pa!=null){
+        if (pa != null) {
             remove(pa);
-            pa=null;
+            pa = null;
         }
         //Quita el panel ul
-        if(ul!=null){
+        if (ul != null) {
             remove(ul);
-            ul=null;
+            ul = null;
         }
         //Quita el panel s
-        if(s!=null){
+        if (s != null) {
             remove(s);
-            s=null;
+            s = null;
         }
         //Quita el panel pt
-        if(pt!=null){
+        if (pt != null) {
             remove(pt);
-            pt=null;
+            pt = null;
         }
         //Quita el panel f
-        if(f!=null){
+        if (f != null) {
             remove(f);
-            f=null;
+            f = null;
         }
         //Quita el panel eps
-        if(eps!=null){
+        if (eps != null) {
             remove(eps);
-            eps=null;
+            eps = null;
         }
         //Quita el panel pqr
-        if(pqr!=null){
+        if (pqr != null) {
             remove(pqr);
-            pqr=null;
+            pqr = null;
         }
         //Quita el panel r
-        if(r!=null){
+        if (r != null) {
             remove(r);
-            r=null;      
+            r = null;
         }
         //Quita el panel vp
-        if(vp!=null){
+        if (vp != null) {
             remove(vp);
-            vp=null;      
+            vp = null;
         }
         //Quita el panel h
-        if(h!=null){
+        if (h != null) {
             remove(h);
-            h=null;      
+            h = null;
         }
         //Quita el panel fp
-        if(fp!=null){
+        if (fp != null) {
             remove(fp);
-            fp=null;      
+            fp = null;
         }
         //Quita el panel pp
-        if(pp!=null){
+        if (pp != null) {
             remove(pp);
-            pp=null;
+            pp = null;
         }
         //Quita el panel de rutas de atencion ra
-        if(ra!=null){
+        if (ra != null) {
             remove(ra);
-            ra=null;
+            ra = null;
         }
-        if(sa!=null){
+        if (sa != null) {
             remove(sa);
-            sa=null;
+            sa = null;
         }
-        
+
         //hacer lo anterior parra cada panel que este en el marco
     }
+
     /**
      * Metodo para iniciar el marco
      */
-    protected  void iniciarMarco(){
+    protected void iniciarMarco() {
         //inicia los componentes del frame
         this.quitarPanelesDelMarco();
         this.iniciarComponentesDePrincipal();
         this.setVisible(true);
     }
+
     /**
      * Metodo para cerrar la ventana
      */
@@ -199,15 +200,17 @@ public class Principal extends JFrame {
         ventana.setVisible(false);
         ventana = null;
     }
+
     /**
      * Metodo para abrir la ventana
      */
     private void iniciarVentana() {
-        if (ventana!=null) {
+        if (ventana != null) {
             cerrarVentana();
-        } 
+        }
         setVisible(false);
     }
+
     //metodos de navegacion
     /**
      * Metodo para pasar al panel de la calculadora
@@ -216,7 +219,7 @@ public class Principal extends JFrame {
         cerrarVentana();
         iniciarMarco();
         //agrega el panelinicial
-         p = new Pantalla_inicial_paciente(this);
+        p = new Pantalla_inicial_paciente(this);
         p.setVisible(true);
         add(p);
         //se ajusta el frame
@@ -224,14 +227,15 @@ public class Principal extends JFrame {
         //centra la aplicacion 
         setLocationRelativeTo(null);
     }
+
     /**
      * Metodo para ir al panel de registrar
      */
-    protected  void irARegistrar() {
+    protected void irARegistrar() {
         cerrarVentana();
         iniciarMarco();
         //agrega el panelinicial
-        registro = new Registro(this);
+        registro = new Registrar(this);
         registro.setVisible(true);
         add(registro);
         //se ajusta el frame
@@ -239,6 +243,7 @@ public class Principal extends JFrame {
         //centra la aplicacion 
         setLocationRelativeTo(null);
     }
+
     /**
      * Metodo para ir al inicio de sesion
      */
@@ -248,6 +253,7 @@ public class Principal extends JFrame {
         login = new Login(this);
         ventana = new Ventana(this, login, "Ventana", false, false, DO_NOTHING_ON_CLOSE);
     }
+
     /**
      * Metodo para ir a la pantalla principal del Rol administrador
      */
@@ -263,6 +269,7 @@ public class Principal extends JFrame {
         //centra la aplicacion 
         setLocationRelativeTo(null);
     }
+
     /**
      * Metodo para ir al panel con la informacion de los usuarios
      */
@@ -276,6 +283,7 @@ public class Principal extends JFrame {
         //centra la aplicacion 
         setLocationRelativeTo(null);
     }
+
     /**
      * Metodo para ir al panel de servicios
      */
@@ -289,9 +297,10 @@ public class Principal extends JFrame {
         //centra la aplicacion 
         setLocationRelativeTo(null);
     }
+
     /**
-     * Metodo para ir al panel con la inforacion de puntos de atencion por parte del Rol
-     * Administrador
+     * Metodo para ir al panel con la inforacion de puntos de atencion por parte
+     * del Rol Administrador
      */
     protected void IrAPunto() {
         iniciarMarco();
@@ -303,6 +312,7 @@ public class Principal extends JFrame {
         //centra la aplicacion 
         setLocationRelativeTo(null);
     }
+
     /**
      * Metodo para ir al panel de edicion de las EPS
      */
@@ -316,6 +326,7 @@ public class Principal extends JFrame {
         //centra la aplicacion 
         setLocationRelativeTo(null);
     }
+
     /**
      * Metodo para ir al panel con los reportes
      */
@@ -329,8 +340,10 @@ public class Principal extends JFrame {
         //centra la aplicacion 
         setLocationRelativeTo(null);
     }
+
     /**
-     * Metodo que redirecciona el panel actual al panel del foro para el Rol administrador
+     * Metodo que redirecciona el panel actual al panel del foro para el Rol
+     * administrador
      */
     protected void IrAForo() {
         iniciarMarco();
@@ -342,6 +355,7 @@ public class Principal extends JFrame {
         //centra la aplicacion 
         setLocationRelativeTo(null);
     }
+
     /**
      * Metodo para ir al apartado de PQR(Preguntas, Quejas y Reclamos)
      */
@@ -355,6 +369,7 @@ public class Principal extends JFrame {
         //centra la aplicacion 
         setLocationRelativeTo(null);
     }
+
     /**
      * Metodo para ir a la pantalla de estadísticas del administrador
      */
@@ -368,10 +383,11 @@ public class Principal extends JFrame {
         //centra la aplicacion 
         setLocationRelativeTo(null);
     }
+
     /**
      * Metodo para ir a la pantalla de informacion del usuario actual
      */
-    protected void IrAVerPerfil(){
+    protected void IrAVerPerfil() {
         iniciarMarco();
         vp = new Ver_Perfil(this);
         vp.setVisible(true);
@@ -381,10 +397,11 @@ public class Principal extends JFrame {
         //centra la aplicacion 
         setLocationRelativeTo(null);
     }
+
     /**
      * Metodo para ir a la pantalla de historial
      */
-    protected void IrAHistorial(){
+    protected void IrAHistorial() {
         iniciarMarco();
         h = new Historial(this);
         h.setVisible(true);
@@ -394,10 +411,11 @@ public class Principal extends JFrame {
         //centra la aplicacion 
         setLocationRelativeTo(null);
     }
+
     /**
      * Metodo para ir a la pantalla del foro para los usuarios con Rol paciente
      */
-    protected void  IrAForoPaciente(){
+    protected void IrAForoPaciente() {
         iniciarMarco();
         fp = new ForoPaciente(this);
         fp.setVisible(true);
@@ -407,10 +425,11 @@ public class Principal extends JFrame {
         //centra la aplicacion 
         setLocationRelativeTo(null);
     }
+
     /**
      * Metodo para ir a la pantalla puntos de atencion
      */
-   protected void  IrAPuntoPaciente(){
+    protected void IrAPuntoPaciente() {
         iniciarMarco();
         pp = new Punto_atencion_paciente(this);
         pp.setVisible(true);
@@ -420,10 +439,11 @@ public class Principal extends JFrame {
         //centra la aplicacion 
         setLocationRelativeTo(null);
     }
-   /**
+
+    /**
      * Metodo para ir a la pantalla de rutas de atencion
      */
-     protected void  IrARutasAtencion(){
+    protected void IrARutasAtencion() {
         iniciarMarco();
         ra = new Rutas_Atencion(this);
         ra.setVisible(true);
@@ -433,10 +453,11 @@ public class Principal extends JFrame {
         //centra la aplicacion 
         setLocationRelativeTo(null);
     }
-     /**
+
+    /**
      * Metodo para ir a la pantalla de rutas de atencion
      */
-     protected void  IrAServicioPaciente(){
+    protected void IrAServicioPaciente() {
         iniciarMarco();
         sa = new ServiciosPaciente(this);
         sa.setVisible(true);
@@ -446,24 +467,38 @@ public class Principal extends JFrame {
         //centra la aplicacion 
         setLocationRelativeTo(null);
     }
+
     //metodos de logica
     /**
      * Metodo para validar el inicio de sesion de un usuario
+     *
      * @param usuario valor del usuario
      * @param pass valor contraseña
      * @return un verdadero o falso segun la condicion
      */
-    protected  boolean validar(String usuario, String pass) {
+    protected boolean validar(String usuario, String pass) {
         return operar.iniciarSesion(usuario, pass);
-    }/**
-     * Metodo para validad el resgistro y agregar el nuevo usuario
-     * @param nombre nombre del usuario
-     * @param usuario valor del usuario
-     * @param pass valor de la contraseña
-     * @param confirPass valor de la constraseña para confirmarlo
-     * @return un verdadero o falso segun la condicion
+    }
+
+    /**
+     * Metodo para validar la informacion de un nuevo usuario
+     * @param nombre nombre del nuevo usuario
+     * @param apellido apellido del nuevo usuario
+     * @param cedula numero de identificacion del nuevo usuario
+     * @param email correo electronico del nuevo usuario
+     * @param rol rol del nuevo usuario
+     * @param telefono numero telefonico del nuevo usuario
+     * @param direccion direccion de domicilio del nuevo usuario
+     * @param eps eps con la que esta ligado el nuevo usuario
+     * @param pass contraeña del nuevo usuario
+     * @param confirPass confirmacion de la nueva contraseaña
+     * @return si el uevo usuario se registro o no
      */
-    protected boolean validarRegistro(String nombre, String usuario, String pass, String confirPass){
-        return true;
+    protected boolean validarRegistro(String nombre, String apellido, String cedula, String email, String rol, String telefono, String direccion, String eps, String pass, String confirPass) {
+        if (operar.Registrar(nombre,apellido,cedula,email,rol,telefono,direccion,eps,pass,confirPass)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

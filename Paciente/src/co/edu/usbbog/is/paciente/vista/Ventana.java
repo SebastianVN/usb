@@ -15,23 +15,28 @@ import javax.swing.JPanel;
  * @author Jose
  */
 public class Ventana extends JDialog {
+
     /**
-     * 
+     * Variable que trae la clase Principal
      */
-    private Principal principal;/**
-     * 
+    private Principal principal;
+    /**
+     * Variable que tare la clase Jpanel para utilizar paneles en la apliacion
      */
     private JPanel jPanel;
+
     /**
-     * 
-     * @param principal
-     * @param jPanel
-     * @param titulo
-     * @param modal
-     * @param marco
-     * @param opcionDeCerrado 
+     * Metodo constructor de la ventana que me almacenara solo el inicio de
+     * sesion
+     *
+     * @param principal escoge el frame a utilizar 
+     * @param jPanel escoge el panel a utilizar
+     * @param titulo nombre de la aplicacion
+     * @param modal si aparece la ventana emergente con el contenido
+     * @param marco si aparece los bordes del modal
+     * @param opcionDeCerrado numero que define si se cierra o no
      */
-    public Ventana(Principal principal, JPanel jPanel, String titulo, boolean modal, boolean marco,  int opcionDeCerrado) {
+    public Ventana(Principal principal, JPanel jPanel, String titulo, boolean modal, boolean marco, int opcionDeCerrado) {
         super(principal, titulo, modal);
         this.setDefaultCloseOperation(opcionDeCerrado);
         this.setUndecorated(marco);

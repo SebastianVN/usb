@@ -12,6 +12,9 @@ import javax.swing.JOptionPane;
  * @author jofa7
  */
 public class ServiciosPaciente extends javax.swing.JPanel {
+    /**
+     * Variable que me trae la clase Principal
+     */
     private Principal p;
     /**
      * Creates new form Servicios
@@ -188,12 +191,13 @@ public class ServiciosPaciente extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jButton4)
-                    .addComponent(jLabel4))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButtonSolicitudServicio)
                     .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(jButton4)
+                            .addComponent(jLabel4))
                         .addGap(10, 10, 10)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton1)
@@ -216,41 +220,55 @@ public class ServiciosPaciente extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jButtonRutasAtencion)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton6)
-                                .addGap(0, 112, Short.MAX_VALUE))
-                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButtonSolicitudServicio)))
-                .addContainerGap())
+                                .addComponent(jButton6))
+                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
+    /**
+     * Metodo para ir al panel de rutas de atencion
+     * @param evt Muestra evento conforme una accion
+     */
     private void jButtonRutasAtencionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRutasAtencionActionPerformed
         // TODO add your handling code here:
         p.IrARutasAtencion();
     }//GEN-LAST:event_jButtonRutasAtencionActionPerformed
-
+    /**
+     * Metodo para ir al panel de punto de atencion de paciente
+     * @param evt Muestra evento conforme una accion
+     */
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
         p.IrAPuntoPaciente();
     }//GEN-LAST:event_jButton6ActionPerformed
-
+        /**
+         * Metodo para ir a solicitar servicio
+         * @param evt Muestra evento conforme una accion
+         */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         p.IrAServicioPaciente();
     }//GEN-LAST:event_jButton1ActionPerformed
-
+    /**
+     * Metodo para ir a ver el perfil del usuario
+     * @param evt Muestra evento conforme una accion
+     */
     private void jButtonVerPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerPerfilActionPerformed
         // TODO add your handling code here:
         p.IrAVerPerfil();
     }//GEN-LAST:event_jButtonVerPerfilActionPerformed
-
+    /**
+     * Metodo para ir a panel del historial medico
+     * @param evt Muestra evento conforme una accion
+     */
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         p.IrAHistorial();
     }//GEN-LAST:event_jButton3ActionPerformed
-
+    /**
+     * Metodo para ir al foro del paciente
+     * @param evt Muestra evento conforme una accion
+     */
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
         p.IrAForoPaciente();
@@ -259,7 +277,10 @@ public class ServiciosPaciente extends javax.swing.JPanel {
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox2ActionPerformed
-
+    /**
+     * Metodo para ir a iniciar sesion
+     * @param evt Muestra evento conforme una accion
+     */
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         JOptionPane.showMessageDialog(null,"Cerrando Sesión...");
         p.irAInicioDeSesion();

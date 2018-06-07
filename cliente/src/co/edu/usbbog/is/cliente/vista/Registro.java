@@ -25,6 +25,7 @@ public class Registro extends javax.swing.JPanel {
 
     /**
      * Este es el metodo contructor de registro
+     *
      * @param p Llama al jFrame principal
      */
     public Registro(Principal p) {
@@ -246,7 +247,7 @@ public class Registro extends javax.swing.JPanel {
             if (!usuario.equals("")) {
                 if (!pass.equals("")) {
                     if (!confirPass.equals("")) {
-                        if (p.validarRegistro(nombre, usuario, pass, confirPass)) {                            
+                        if (p.validarRegistro(nombre, usuario, pass, confirPass)) {
                             p.irAInicioDeSesion();
                         } else {
                             JOptionPane.showMessageDialog(this, "El usuario ya existe", "Error al registrarse", JOptionPane.ERROR_MESSAGE);

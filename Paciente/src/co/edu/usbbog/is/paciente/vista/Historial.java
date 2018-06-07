@@ -12,7 +12,11 @@ import javax.swing.JOptionPane;
  * @author jofa7
  */
 public class Historial extends javax.swing.JPanel {
-private Principal p;
+    /**
+     * Variable que me trae la clase Principal
+     */
+    private Principal p;
+
     /**
      * Creates new form Usuarios_lista
      */
@@ -184,37 +188,58 @@ private Principal p;
                 .addContainerGap(17, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
+    /**
+     * Metodod para ir al inicio de sesion
+     * @param evt Muestra evento conforme una accion
+     */
     private void jButtonCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCerrarSesionActionPerformed
-        JOptionPane.showMessageDialog(null,"Cerrando Sesión...");
+        JOptionPane.showMessageDialog(null, "Cerrando Sesión...");
         p.irAInicioDeSesion();
     }//GEN-LAST:event_jButtonCerrarSesionActionPerformed
-
+    /**
+     * Metodo para ir al historial medico
+     * @param evt Muestra evento conforme una accion
+     */
     private void jButtonHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHistorialActionPerformed
         // TODO add your handling code here:
         p.IrAHistorial();
     }//GEN-LAST:event_jButtonHistorialActionPerformed
-
+    /**
+     * Metodo para ir al foro de los pacientes
+     * @param evt Muestra evento conforme una accion
+     */
     private void jButtonForoPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonForoPacienteActionPerformed
         // TODO add your handling code here:
         p.IrAForoPaciente();
     }//GEN-LAST:event_jButtonForoPacienteActionPerformed
-
+    /**
+     * Metodo paara ir al punto de atencion
+     * @param evt Muestra evento conforme una accion
+     */
     private void jButtonPuntoPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPuntoPacienteActionPerformed
         // TODO add your handling code here:
         p.IrAPuntoPaciente();
     }//GEN-LAST:event_jButtonPuntoPacienteActionPerformed
-
+    /**
+     * Metodo para ir al servicio que solicita el paciente
+     * @param evt Muestra evento conforme una accion
+     */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         p.IrAServicioPaciente();
     }//GEN-LAST:event_jButton1ActionPerformed
-
+    /**
+     * Metodo para ir a ver el perfil del usuario
+     * @param evt Muestra evento conforme una accion
+     */
     private void jButtonVerPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerPerfilActionPerformed
         // TODO add your handling code here:
         p.IrAVerPerfil();
     }//GEN-LAST:event_jButtonVerPerfilActionPerformed
-
+    /**
+     * Metodo para ir a las rutas de atencion
+     * @param evt Muestra evento conforme una accion
+     */
     private void jButtonRutasAtencionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRutasAtencionActionPerformed
         // TODO add your handling code here:
         p.IrARutasAtencion();
