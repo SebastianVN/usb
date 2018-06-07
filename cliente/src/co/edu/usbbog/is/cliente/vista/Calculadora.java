@@ -17,6 +17,10 @@ public class Calculadora extends javax.swing.JPanel {
     /**
      * Variable que me hace la conexion con el frame principal
      */
+    String memoria1;
+    String signo;
+    String memoria2;
+
     private Principal p;
     /**
      * @author sebastian barriga Creates new form Calculadora
@@ -55,6 +59,7 @@ public class Calculadora extends javax.swing.JPanel {
     private void initComponents() {
 
         jButton19 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
@@ -81,9 +86,19 @@ public class Calculadora extends javax.swing.JPanel {
         jButtonLimpiar = new javax.swing.JButton();
         jLabelUsuario = new javax.swing.JLabel();
         jLabelHora = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtpantalla = new javax.swing.JTextField();
+        jButtonSuma1 = new javax.swing.JButton();
 
         jButton19.setText("+");
+
+        jButton10.setBackground(new java.awt.Color(0, 102, 102));
+        jButton10.setForeground(new java.awt.Color(255, 255, 255));
+        jButton10.setText("+/-");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
 
         jButton9.setText("9");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
@@ -268,9 +283,17 @@ public class Calculadora extends javax.swing.JPanel {
 
             jLabelHora.setText("Hora");
 
-            jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            txtpantalla.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    jTextField1ActionPerformed(evt);
+                    txtpantallaActionPerformed(evt);
+                }
+            });
+
+            jButtonSuma1.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+            jButtonSuma1.setText("+/-");
+            jButtonSuma1.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    jButtonSuma1ActionPerformed(evt);
                 }
             });
 
@@ -298,7 +321,7 @@ public class Calculadora extends javax.swing.JPanel {
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(jButton9)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jButtonPotencia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(jButtonPotencia, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE))
                                 .addGroup(layout.createSequentialGroup()
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                         .addComponent(jButtonPunto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -312,7 +335,8 @@ public class Calculadora extends javax.swing.JPanel {
                                         .addGroup(layout.createSequentialGroup()
                                             .addComponent(jButton0)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jButtonIgual)))
+                                            .addComponent(jButtonIgual))
+                                        .addComponent(jButtonSuma1))
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(layout.createSequentialGroup()
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -320,7 +344,7 @@ public class Calculadora extends javax.swing.JPanel {
                                         .addGroup(layout.createSequentialGroup()
                                             .addGap(6, 6, 6)
                                             .addComponent(jButtonSuma, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                                .addComponent(jTextField1))
+                                .addComponent(txtpantalla))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jButtonRaiz, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
@@ -334,9 +358,10 @@ public class Calculadora extends javax.swing.JPanel {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabelHora, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(jButtonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jButtonLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGap(0, 0, Short.MAX_VALUE)
+                            .addComponent(jButtonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jButtonLogout)))
                     .addGap(8, 8, 8))
             );
             layout.setVerticalGroup(
@@ -349,7 +374,7 @@ public class Calculadora extends javax.swing.JPanel {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtpantalla, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jButton9)
@@ -380,7 +405,8 @@ public class Calculadora extends javax.swing.JPanel {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jButtonSalir)
-                                .addComponent(jButtonLogout)))
+                                .addComponent(jButtonLogout)
+                                .addComponent(jButtonSuma1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(layout.createSequentialGroup()
                             .addGap(55, 55, 55)
                             .addComponent(jButtonLimpiar)
@@ -392,162 +418,93 @@ public class Calculadora extends javax.swing.JPanel {
                             .addComponent(jButtonModular)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(jButtonDivision)))
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addContainerGap(49, Short.MAX_VALUE))
             );
         }// </editor-fold>//GEN-END:initComponents
     /**
      * Void jButton encargado el boton 9
      */
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        if (operacionNueva) {
-            numero1 += "9";
-            crearEcuacion(0);
-
-        } else {
-            numero2 += "9";
-            crearEcuacion(1);
-        }
+        txtpantalla.setText(txtpantalla.getText() + "9");
+        txtpantalla.setText("9");
     }//GEN-LAST:event_jButton9ActionPerformed
     /**
      * Void jButton encargado el boton 8
      */
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        if (operacionNueva) {
-            numero1 += "8";
-            crearEcuacion(0);
-
-        } else {
-            numero2 += "8";
-            crearEcuacion(1);
-        }
+        txtpantalla.setText(txtpantalla.getText() + "8");
+        txtpantalla.setText("8");
     }//GEN-LAST:event_jButton8ActionPerformed
     /**
      * Void jButton encargado el boton 7
      */
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        if (operacionNueva) {
-            numero1 += "7";
-            crearEcuacion(0);
-
-        } else {
-            numero2 += "7";
-            crearEcuacion(1);
-        }
+        txtpantalla.setText(txtpantalla.getText() + "7");
+        txtpantalla.setText("7");
     }//GEN-LAST:event_jButton7ActionPerformed
     /**
      * Void jButton encargado el boton Punto (.)
      */
     private void jButtonPuntoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPuntoActionPerformed
-        if (operacionNueva) {
-            if (numero1.equals("")) {
-                numero1 = "0.";
-            } else {
-                if (numero1.indexOf(".") == -1) {
-                    numero1 += ".";
-                } else {
-                    numero1 = numero1;
-                }
+        String cadena;
+        cadena = txtpantalla.getText();
 
-            }
-
-            crearEcuacion(0);
+        if (cadena.length() <= 0) {
+            txtpantalla.setText("0.");
 
         } else {
-            if (numero2.equals("")) {
-                numero2 = "0.";
-            } else {
-                if (numero2.indexOf(".") == -1) {
-                    numero2 += ".";
-                } else {
-                    numero2 = numero2;
-                }
+            if (!existepunto(txtpantalla.getText())) {
+                txtpantalla.setText(txtpantalla.getText() + ".");
+
             }
-            crearEcuacion(1);
         }
     }//GEN-LAST:event_jButtonPuntoActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtpantallaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtpantallaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtpantallaActionPerformed
     /**
      * Void jButton encargado el boton 1
      */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
-        if (operacionNueva) {
-            numero1 += "1";
-            crearEcuacion(0);
-
-        } else {
-            numero2 += "1";
-            crearEcuacion(1);
-        }
-
+        txtpantalla.setText(txtpantalla.getText() + "1");
+      txtpantalla.setText("1");
+  
     }//GEN-LAST:event_jButton1ActionPerformed
     /**
      * Void jButton encargado el boton 2
      */
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        if (operacionNueva) {
-            numero1 += "2";
-            crearEcuacion(0);
-
-        } else {
-            numero2 += "2";
-            crearEcuacion(1);
-        }
+        txtpantalla.setText(txtpantalla.getText() + "2");
+        txtpantalla.setText("2");
     }//GEN-LAST:event_jButton2ActionPerformed
     /**
      * Void jButton encargado el boton 3
      */
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        if (operacionNueva) {
-            numero1 += "3";
-            crearEcuacion(0);
-
-        } else {
-            numero2 += "3";
-            crearEcuacion(1);
-        }
+        txtpantalla.setText(txtpantalla.getText() + "3");
+     txtpantalla.setText("3");
     }//GEN-LAST:event_jButton3ActionPerformed
     /**
      * Void jButton encargado el boton 4
      */
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        if (operacionNueva) {
-            numero1 += "4";
-            crearEcuacion(0);
-
-        } else {
-            numero2 += "4";
-            crearEcuacion(1);
-        }
+        txtpantalla.setText(txtpantalla.getText() + "4");
+        txtpantalla.setText("4");
     }//GEN-LAST:event_jButton4ActionPerformed
     /**
      * Void jButton encargado el boton 5
      */
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        if (operacionNueva) {
-            numero1 += "5";
-            crearEcuacion(0);
-
-        } else {
-            numero2 += "5";
-            crearEcuacion(1);
-        }
+        txtpantalla.setText(txtpantalla.getText() + "5");
+        txtpantalla.setText("5");
     }//GEN-LAST:event_jButton5ActionPerformed
     /**
      * Void jButton encargado el boton 6
      */
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        if (operacionNueva) {
-            numero1 += "6";
-            crearEcuacion(0);
-
-        } else {
-            numero2 += "6";
-            crearEcuacion(1);
-        }
+        txtpantalla.setText(txtpantalla.getText() + "6");
+        txtpantalla.setText("6");
     }//GEN-LAST:event_jButton6ActionPerformed
     /**
      * Void jButton encargado el boton salir
@@ -573,117 +530,185 @@ public class Calculadora extends javax.swing.JPanel {
         numero1 = "";
         numero2 = "";
         operador = "";
-        jTextField1.setText("");
+        txtpantalla.setText("");
         operacionNueva = true;
     }//GEN-LAST:event_jButtonLimpiarActionPerformed
     /**
      * Void jButton encargado el boton Borrar
      */
     private void jButtonBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBorrarActionPerformed
-        // TODO add your handling code here:
-        System.out.println("Borrando");
+        String cadena;
+        cadena = txtpantalla.getText();
+
+        if (cadena.length() > 0) {
+            cadena = cadena.substring(0, cadena.length() - 1);
+            txtpantalla.setText(cadena);
+        }
     }//GEN-LAST:event_jButtonBorrarActionPerformed
     /**
      * Void jButton encargado el boton Potencia
      */
     private void jButtonPotenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPotenciaActionPerformed
-        // TODO add your handling code here:
-        System.out.println("Potenciacion");
+        if (numero1.equals("")) {
+            operador = "";
+        } else {
+            operador = "^";
+            if (hayOperador()) {
+                calcular();
+            } else {
+                crearEcuacion(2);
+            }
+        }
     }//GEN-LAST:event_jButtonPotenciaActionPerformed
     /**
      * Void jButton encargado el boton Division real
      */
     private void jButtonRealActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRealActionPerformed
-
+        if (!txtpantalla.getText().equals("")) {
+            memoria1 = txtpantalla.getText();
+            signo = "\\";
+            txtpantalla.setText("\\");
+        }
     }//GEN-LAST:event_jButtonRealActionPerformed
     /**
      * Void jButton encargado el boton Multiplicacion
      */
     private void jButtonMultiplicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMultiplicacionActionPerformed
-        if (numero1.equals("")) {
-            operador = "";
-        } else {
-            operador = "*";
-            if (hayOperador()) {                
-                calcular();
-            } else {
-                crearEcuacion(2);
-            }
+        if (!txtpantalla.getText().equals("")) {
+            memoria1 = txtpantalla.getText();
+            signo = "*";
+            txtpantalla.setText("*");
         }
     }//GEN-LAST:event_jButtonMultiplicacionActionPerformed
     /**
      * Void jButton encargado el boton Suma
      */
     private void jButtonSumaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSumaActionPerformed
-        if (numero1.equals("")) {
-            operador = "";
-        } else {
-            operador = "+";
-            if (hayOperador()) {                
-                calcular();
-            } else {
-                crearEcuacion(2);
-            }
+        if (!txtpantalla.getText().equals("")) {
+            memoria1 = txtpantalla.getText();
+            signo = "+";
+            txtpantalla.setText("+");
+      
         }
+       
     }//GEN-LAST:event_jButtonSumaActionPerformed
     /**
      * Void jButton encargado el boton Resta
      */
     private void jButtonRestaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRestaActionPerformed
-        if (numero1.equals("")) {
-            operador = "";
-            numero1 = "-";
-        } else {
-            operador = "-";
-            if (hayOperador()) {  
-                
-                //calcular();
-            } else {
-                crearEcuacion(2);
-            }
+        if (!txtpantalla.getText().equals("")) {
+            memoria1 = txtpantalla.getText();
+            signo = "-";
+            txtpantalla.setText("-");
         }
     }//GEN-LAST:event_jButtonRestaActionPerformed
     /**
      * Void jButton encargado el boton Division
      */
     private void jButtonDivisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDivisionActionPerformed
-
-        System.out.println("Division");
+        if (!txtpantalla.getText().equals("")) {
+            memoria1 = txtpantalla.getText();
+            signo = "÷";
+            txtpantalla.setText("÷");
+        }
     }//GEN-LAST:event_jButtonDivisionActionPerformed
     /**
      * Void jButton encargado el boton Division Modular
      */
     private void jButtonModularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModularActionPerformed
-        // TODO add your handling code here:
-        System.out.println("Division modular");
+
+        if (!txtpantalla.getText().equals("")) {
+            memoria1 = txtpantalla.getText();
+            signo = "%";
+            txtpantalla.setText("%");
+        }
     }//GEN-LAST:event_jButtonModularActionPerformed
     /**
      * Void jButton encargado el boton Raiz n
      */
     private void jButtonRaizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRaizActionPerformed
-        // TODO add your handling code here:
-        System.out.println("Raiz n");
+
+        if (!txtpantalla.getText().equals("")) {
+            memoria1 = txtpantalla.getText();
+            signo = "√";
+            txtpantalla.setText("√");
+        }
     }//GEN-LAST:event_jButtonRaizActionPerformed
     /**
      * Void jButton encargado el boton 0
      */
     private void jButton0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton0ActionPerformed
-        if (operacionNueva) {
-            numero1 += "0";
-            crearEcuacion(0);
-
-        } else {
-            numero2 += "0";
-            crearEcuacion(1);
-        }
+        txtpantalla.setText(txtpantalla.getText() + "0");
     }//GEN-LAST:event_jButton0ActionPerformed
     /**
      * Void jButton encargado el boton Igual (=)
      */
     private void jButtonIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIgualActionPerformed
-        // TODO add your handling code here:
-        System.out.println("Igual (=)");
+        String resultado;
+        memoria2 = txtpantalla.getText();
+
+        if (!memoria2.equals("")) {
+            resultado = calculadora(memoria1, memoria2, signo);
+            txtpantalla.setText(resultado);
+        }
     }//GEN-LAST:event_jButtonIgualActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+        Double num;
+        String cadena;
+        cadena = txtpantalla.getText();
+        if (cadena.length() > 0) {
+            num = (-1) * Double.parseDouble(cadena);
+            txtpantalla.setText(num.toString());
+        }
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButtonSuma1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSuma1ActionPerformed
+        Double num;
+        String cadena;
+        cadena = txtpantalla.getText();
+        if (cadena.length() > 0) {
+            num = (-1) * Double.parseDouble(cadena);
+            txtpantalla.setText(num.toString());
+        }
+
+    }//GEN-LAST:event_jButtonSuma1ActionPerformed
+    public static String calculadora(String memoria1, String memoria2, String signo) {
+        Double resultado = 0.0;
+        String respuesta;
+
+        if (signo.equals("-")) {
+            resultado = Double.parseDouble(memoria1) - Double.parseDouble(memoria2);
+
+        }
+        if (signo.equals("+")) {
+            resultado = Double.parseDouble(memoria1) + Double.parseDouble(memoria2);
+
+        }
+        if (signo.equals("*")) {
+            resultado = Double.parseDouble(memoria1) * Double.parseDouble(memoria2);
+
+        }
+        if (signo.equals("÷")) {
+            resultado = Double.parseDouble(memoria1) / Double.parseDouble(memoria2);
+
+        }
+        if (signo.equals("\\")) {
+            resultado = Double.parseDouble(memoria1) / Double.parseDouble(memoria2);
+
+        }
+        if (signo.equals("%")) {
+            resultado = Double.parseDouble(memoria1) / Double.parseDouble(memoria2);
+        }
+        if (signo.equals("√")) {
+            resultado = Double.parseDouble(memoria1) / Double.parseDouble(memoria2);
+
+        }
+
+        respuesta = resultado.toString();
+        return respuesta;
+    }
 
     void operaciones() {
         /*double n1, n2;
@@ -720,6 +745,7 @@ public class Calculadora extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton0;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -743,9 +769,10 @@ public class Calculadora extends javax.swing.JPanel {
     private javax.swing.JButton jButtonResta;
     private javax.swing.JButton jButtonSalir;
     private javax.swing.JButton jButtonSuma;
+    private javax.swing.JButton jButtonSuma1;
     private javax.swing.JLabel jLabelHora;
     private javax.swing.JLabel jLabelUsuario;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField txtpantalla;
     // End of variables declaration//GEN-END:variables
 
     private void crearEcuacion(int tipo) {
@@ -761,40 +788,40 @@ public class Calculadora extends javax.swing.JPanel {
                 operacionNueva = false;
                 break;
         }
-        jTextField1.setText(ecuacion);
+        txtpantalla.setText(ecuacion);
         System.out.println(ecuacion);
     }
 
     private boolean hayOperador() {
         if (operador.equals("-")) {
             if (ecuacion.indexOf("+") != -1) {
-                numero2="-";
+                numero2 = "-";
                 return true;
             } else if (ecuacion.indexOf("-") != -1) {
                 if (ecuacion.indexOf("-") == 0) {
                     return false;
                 } else {
-                    numero2="-";
+                    numero2 = "-";
                     return true;
                 }
 
             } else if (ecuacion.indexOf("*") != -1) {
-                numero2="-";
+                numero2 = "-";
                 return true;
             } else if (ecuacion.indexOf("d") != -1) {
-                numero2="-";
+                numero2 = "-";
                 return true;
             } else if (ecuacion.indexOf("e") != -1) {
-                numero2="-";
+                numero2 = "-";
                 return true;
             } else if (ecuacion.indexOf("m") != -1) {
-                numero2="-";
+                numero2 = "-";
                 return true;
             } else if (ecuacion.indexOf("p") != -1) {
-                numero2="-";
+                numero2 = "-";
                 return true;
             } else if (ecuacion.indexOf("r") != -1) {
-                numero2="-";
+                numero2 = "-";
                 return true;
             } else {
                 return false;
@@ -834,5 +861,22 @@ public class Calculadora extends javax.swing.JPanel {
         crearEcuacion(0);
 
         System.out.println("calculando...");
+
+    }
+
+    public static boolean existepunto(String cadena) {
+        boolean resultado;
+        resultado = false;
+
+        for (int i = 0; i < cadena.length(); i++) {
+            if (cadena.substring(i, i + 1).equals(".")) {
+                resultado = true;
+                break;
+
+            }
+
+        }
+        return resultado;
+
     }
 }
